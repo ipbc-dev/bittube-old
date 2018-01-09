@@ -1,0 +1,1295 @@
+2018-Jan-06 11:08:48.157625 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 11:08:48.157763 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 11:08:48.158387 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 11:08:48.158623 INFO    [node_server] Network: 06b7dad3-6bc1-5316-af21-7be63a29b1f1
+2018-Jan-06 11:08:48.158655 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 11:08:48.158707 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 11:08:48.158731 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 11:08:52.163271 INFO    [node_server] No IGD was found.
+2018-Jan-06 11:08:52.163339 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 11:08:52.163379 INFO    [daemon] Initializing core...
+2018-Jan-06 11:08:52.163479 INFO    [Blockchain] Blockchain not loaded, generating genesis block.
+2018-Jan-06 11:08:52.163667 INFO    [Blockchain] Blockchain initialized. last block: 0, d2012.h06.m08.s52 time ago, current difficulty: 1
+2018-Jan-06 11:08:52.163703 INFO    [daemon] Core initialized OK
+2018-Jan-06 11:08:52.163774 INFO    [daemon] Starting core rpc server on address 127.0.0.1:24182
+2018-Jan-06 11:08:52.163838 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 11:08:52.163873 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 11:08:52.163898 INFO    [node_server] Starting node_server
+2018-Jan-06 11:08:52.164209 INFO    [core] 
+2018-Jan-06 11:08:52.164209 INFO    [core] **********************************************************************
+2018-Jan-06 11:08:52.164209 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 11:08:52.164209 INFO    [core] 
+2018-Jan-06 11:08:52.164209 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 11:08:52.164209 INFO    [core] 
+2018-Jan-06 11:08:52.164209 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 11:08:52.164209 INFO    [core] 
+2018-Jan-06 11:08:52.164209 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 11:08:52.164209 INFO    [core] **********************************************************************
+2018-Jan-06 11:09:00.378484 INFO    [node_server] Stop signal sent
+2018-Jan-06 11:09:00.378583 INFO    [node_server] Stopping NodeServer and it's0 connections...
+2018-Jan-06 11:09:00.378643 INFO    [node_server] NodeServer loop stopped
+2018-Jan-06 11:09:00.378666 INFO    [daemon] p2p net loop stopped
+2018-Jan-06 11:09:00.378687 INFO    [daemon] Stopping core rpc server...
+2018-Jan-06 11:09:00.378746 INFO    [daemon] Deinitializing core...
+2018-Jan-06 11:09:00.378804 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 11:09:00.378949 INFO    [Blockchain] Saving blockchain...
+2018-Jan-06 11:09:00.379026 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-06 11:09:00.379054 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-06 11:09:00.379077 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-06 11:09:00.379099 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-06 11:09:00.379120 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-06 11:09:00.379142 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 11:09:00.379224 INFO    [daemon] Deinitializing p2p...
+2018-Jan-06 11:09:00.379400 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 11:09:00.379497 INFO    [daemon] Node stopped.
+2018-Jan-06 11:09:56.729409 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 11:09:56.729500 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 11:09:56.730022 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 11:09:56.730112 INFO    [node_server] Network: 06b7dad3-6bc1-5316-af21-7be63a29b1f1
+2018-Jan-06 11:09:56.730144 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 11:09:56.730242 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 11:09:56.730287 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 11:10:00.734280 INFO    [node_server] No IGD was found.
+2018-Jan-06 11:10:00.734362 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 11:10:00.734403 INFO    [daemon] Initializing core...
+2018-Jan-06 11:10:00.734476 INFO    [Blockchain] Loading blockchain...
+2018-Jan-06 11:10:00.734551 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-06 11:10:00.734581 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-06 11:10:00.734603 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-06 11:10:00.734624 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-06 11:10:00.734646 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-06 11:10:00.734670 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 11:10:00.734710 INFO    [Blockchain] Blockchain initialized. last block: 0, d2012.h06.m10.s00 time ago, current difficulty: 1
+2018-Jan-06 11:10:00.734737 INFO    [daemon] Core initialized OK
+2018-Jan-06 11:10:00.734809 INFO    [daemon] Starting core rpc server on address 127.0.0.1:24182
+2018-Jan-06 11:10:00.734867 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 11:10:00.734896 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 11:10:00.734918 INFO    [node_server] Starting node_server
+2018-Jan-06 11:10:00.735105 INFO    [core] 
+2018-Jan-06 11:10:00.735105 INFO    [core] **********************************************************************
+2018-Jan-06 11:10:00.735105 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 11:10:00.735105 INFO    [core] 
+2018-Jan-06 11:10:00.735105 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 11:10:00.735105 INFO    [core] 
+2018-Jan-06 11:10:00.735105 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 11:10:00.735105 INFO    [core] 
+2018-Jan-06 11:10:00.735105 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 11:10:00.735105 INFO    [core] **********************************************************************
+2018-Jan-06 11:10:12.557864 INFO    [protocol] 
+2018-Jan-06 11:10:12.557864 INFO    [protocol] **********************************************************************
+2018-Jan-06 11:10:12.557864 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-06 11:10:12.557864 INFO    [protocol] 
+2018-Jan-06 11:10:12.557864 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-06 11:10:12.557864 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-06 11:10:12.557864 INFO    [protocol] 
+2018-Jan-06 11:10:12.557864 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-06 11:10:12.557864 INFO    [protocol] **********************************************************************
+2018-Jan-06 11:20:49.172100 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 4
+2018-Jan-06 11:20:49.172100 INFO    [Blockchain] id:	935145d828d38377d4a7933b721cf53f787f1366753664e1908bda21d7df51ac
+2018-Jan-06 11:20:49.172100 INFO    [Blockchain] PoW:	686d413834438b95d29b9115581d0bc2353132ea78ef09030b341f87781e0400
+2018-Jan-06 11:20:49.172100 INFO    [Blockchain] difficulty:	6
+2018-Jan-06 11:22:26.510298 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 10
+2018-Jan-06 11:22:26.510298 INFO    [Blockchain] id:	fedbfb2b74def7cfa8f5407a02d0b1a430d985f5164f2926cc94c94887a996dd
+2018-Jan-06 11:22:26.510298 INFO    [Blockchain] PoW:	d2a9e9477cb36c47dca81b5f9f8801468e936bdc9a8c97ea0a6aa0c8be370200
+2018-Jan-06 11:22:26.510298 INFO    [Blockchain] difficulty:	1847
+2018-Jan-06 11:31:30.573277 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 11:31:30.573338 INFO    [core] Transaction verification failed: 56c1bcb4fe3d35d5d45313d8d52e6f09e86009f1ff0d1feeae78ce7d8aee728b
+2018-Jan-06 11:31:30.573383 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 11:38:40.743741 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 11:38:40.743801 INFO    [core] Transaction verification failed: 3a19cdc1bffc23552bf79b81056406f03523517131da3e43f3c6ffa1367ec9ed
+2018-Jan-06 11:38:40.743829 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 11:48:40.808893 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 11:48:40.808953 INFO    [core] Transaction verification failed: f0744411cc0235c220dd6821700b01b9ef1bf2d7dfcc6da96787935b56f1a704
+2018-Jan-06 11:48:40.808996 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 11:58:40.863961 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 11:58:40.864020 INFO    [core] Transaction verification failed: af712cf24cec0262bce51f50cc3426456d1e602ea0765942f3131e8cc6f2efb0
+2018-Jan-06 11:58:40.864049 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 12:08:40.930226 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 12:08:40.930291 INFO    [core] Transaction verification failed: 02ac8ede68595bf099e408cc592a2b684e089da1567ade0a8c6abfcd9aeb0894
+2018-Jan-06 12:08:40.930336 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 12:18:41.017846 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 12:18:41.017907 INFO    [core] Transaction verification failed: 514a9dbb83da6b9eed7fa88b3ccee68b4289639c8b4f6ada59fb5e7942e48f6f
+2018-Jan-06 12:18:41.017939 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 12:28:41.091821 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 12:28:41.091873 INFO    [core] Transaction verification failed: 23d181f57ae828892987b0006f5980d0730b536a629635bb1f3070a96b1eb0a8
+2018-Jan-06 12:28:41.091903 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 12:38:41.188454 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 12:38:41.188513 INFO    [core] Transaction verification failed: 9b91901d0fc604169962edc6f62bc12c6e4932cd44026efc1731292f26c0e5dc
+2018-Jan-06 12:38:41.188560 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 12:48:41.284775 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 12:48:41.284834 INFO    [core] Transaction verification failed: 4939fb2fcde9e788722af7c97c55e9c34bed4005d2ba85a89c5ab20aad05f615
+2018-Jan-06 12:48:41.284882 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 12:58:41.385956 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 12:58:41.386013 INFO    [core] Transaction verification failed: 2ece2daeeca102b654ff099e4c72796ec6a2464caaf9df22b9660dbea16d013b
+2018-Jan-06 12:58:41.386585 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 13:08:41.505674 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 13:08:41.505736 INFO    [core] Transaction verification failed: 99f043d743b0d4941454ec8c48fcda3648e0e3b61926c72e46443c9cc25d5d23
+2018-Jan-06 13:08:41.505787 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 13:18:41.640405 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 13:18:41.640464 INFO    [core] Transaction verification failed: 9cf96da77b370e0a27bc0bf7488631af91fe489f0234abb34b274b7324eb185a
+2018-Jan-06 13:18:41.640514 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 13:28:41.772450 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 13:28:41.772508 INFO    [core] Transaction verification failed: ebc0519f5ed173ea3a35c6ebf6594eb434f45d67fcc7b91b2b5bae4ca50e5978
+2018-Jan-06 13:28:41.772558 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 13:38:41.924609 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 13:38:41.924661 INFO    [core] Transaction verification failed: 53a820dda5493ded96dad8b9bd2d595bf43d86952b59c66bab4053e48f46edd1
+2018-Jan-06 13:38:41.924711 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 13:48:42.080880 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 13:48:42.080939 INFO    [core] Transaction verification failed: c73122bab54d55ebc9d3d4bd5c27d70f1ac1f40d5d8c2d4ba7343a92f760c306
+2018-Jan-06 13:48:42.080974 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 13:58:42.260536 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 13:58:42.260591 INFO    [core] Transaction verification failed: fd13d47abadacfcca4b735f56e0c6eb87ee1882537bdfcdef06686e04814ad35
+2018-Jan-06 13:58:42.260643 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 14:08:42.441708 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 14:08:42.441769 INFO    [core] Transaction verification failed: 326bd7d9ba9f90e5d542ad8b984e6a2af9bad56bcc540dad2cf9fb0b557a8590
+2018-Jan-06 14:08:42.441806 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 14:18:42.636755 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 14:18:42.636814 INFO    [core] Transaction verification failed: 6512275c2f99084769f68c5b6fc04080a704b1338c0db798ac6ae8e69de85ba7
+2018-Jan-06 14:18:42.636866 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 14:28:42.833468 INFO    [txpool] transaction fee is not enough: 0.00010000000, minimum fee: 0.00100000000
+2018-Jan-06 14:28:42.833527 INFO    [core] Transaction verification failed: e426a172d903af31c178d005d9698639e8753cd45db4a378ceee4e5c1d1c6525
+2018-Jan-06 14:28:42.833580 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-06 14:36:33.867368 INFO    [node_server] Stop signal sent
+2018-Jan-06 14:36:33.867488 INFO    [node_server] Stopping NodeServer and it's1 connections...
+2018-Jan-06 14:36:33.867620 INFO    [node_server] NodeServer loop stopped
+2018-Jan-06 14:36:33.867656 INFO    [daemon] p2p net loop stopped
+2018-Jan-06 14:36:33.867678 INFO    [daemon] Stopping core rpc server...
+2018-Jan-06 14:36:33.867718 INFO    [daemon] Deinitializing core...
+2018-Jan-06 14:36:33.867743 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 14:36:33.867839 INFO    [Blockchain] Saving blockchain...
+2018-Jan-06 14:36:33.867909 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-06 14:36:33.867957 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-06 14:36:33.868007 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-06 14:36:33.868042 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-06 14:36:33.868094 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-06 14:36:33.868119 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 14:36:33.868157 INFO    [daemon] Deinitializing p2p...
+2018-Jan-06 14:36:33.868271 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 14:36:33.868511 INFO    [daemon] Node stopped.
+2018-Jan-06 14:36:38.464327 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 14:36:38.464420 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 14:36:38.464986 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 14:36:38.465071 INFO    [node_server] Network: 06b7dad3-6bc1-5316-af21-7be63a29b1f1
+2018-Jan-06 14:36:38.465108 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 14:36:38.465158 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 14:36:38.465196 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 14:36:42.469757 INFO    [node_server] No IGD was found.
+2018-Jan-06 14:36:42.469828 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 14:36:42.469868 INFO    [daemon] Initializing core...
+2018-Jan-06 14:36:42.469938 INFO    [Blockchain] Loading blockchain...
+2018-Jan-06 14:36:42.470023 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-06 14:36:42.470060 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-06 14:36:42.470096 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-06 14:36:42.470119 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-06 14:36:42.470258 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-06 14:36:42.470287 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 14:36:42.470939 INFO    [Blockchain] Blockchain initialized. last block: 72, d0.h00.m06.s19 time ago, current difficulty: 380964
+2018-Jan-06 14:36:42.470983 INFO    [daemon] Core initialized OK
+2018-Jan-06 14:36:42.471115 INFO    [daemon] Starting core rpc server on address 127.0.0.1:24182
+2018-Jan-06 14:36:42.471185 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 14:36:42.471280 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 14:36:42.471365 INFO    [node_server] Starting node_server
+2018-Jan-06 14:36:42.471669 INFO    [protocol] 
+2018-Jan-06 14:36:42.471669 INFO    [protocol] **********************************************************************
+2018-Jan-06 14:36:42.471669 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-06 14:36:42.471669 INFO    [protocol] 
+2018-Jan-06 14:36:42.471669 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-06 14:36:42.471669 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-06 14:36:42.471669 INFO    [protocol] 
+2018-Jan-06 14:36:42.471669 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-06 14:36:42.471669 INFO    [protocol] **********************************************************************
+2018-Jan-06 14:36:42.472716 INFO    [core] 
+2018-Jan-06 14:36:42.472716 INFO    [core] **********************************************************************
+2018-Jan-06 14:36:42.472716 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 14:36:42.472716 INFO    [core] 
+2018-Jan-06 14:36:42.472716 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 14:36:42.472716 INFO    [core] 
+2018-Jan-06 14:36:42.472716 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 14:36:42.472716 INFO    [core] 
+2018-Jan-06 14:36:42.472716 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 14:36:42.472716 INFO    [core] **********************************************************************
+2018-Jan-06 14:50:28.701541 INFO    [node_server] Stop signal sent
+2018-Jan-06 14:50:28.701644 INFO    [node_server] Stopping NodeServer and it's2 connections...
+2018-Jan-06 14:50:28.701798 INFO    [node_server] NodeServer loop stopped
+2018-Jan-06 14:50:28.701833 INFO    [daemon] p2p net loop stopped
+2018-Jan-06 14:50:28.701854 INFO    [daemon] Stopping core rpc server...
+2018-Jan-06 14:50:28.701894 INFO    [daemon] Deinitializing core...
+2018-Jan-06 14:50:28.701918 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 14:50:28.702015 INFO    [Blockchain] Saving blockchain...
+2018-Jan-06 14:50:28.702068 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-06 14:50:28.702102 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-06 14:50:28.702131 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-06 14:50:28.702215 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-06 14:50:28.702292 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-06 14:50:28.702327 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 14:50:28.702369 INFO    [daemon] Deinitializing p2p...
+2018-Jan-06 14:50:28.702498 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 14:50:28.702727 INFO    [daemon] Node stopped.
+2018-Jan-06 14:50:42.024752 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 14:50:42.024845 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 14:50:42.025326 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 14:50:42.025403 INFO    [node_server] Network: 06b7dad3-6bc1-5316-af21-7be63a29b1f1
+2018-Jan-06 14:50:42.025431 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 14:50:42.025474 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 14:50:42.025500 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 14:50:46.030045 INFO    [node_server] No IGD was found.
+2018-Jan-06 14:50:46.030113 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 14:50:46.030156 INFO    [daemon] Initializing core...
+2018-Jan-06 14:50:46.030279 INFO    [Blockchain] Loading blockchain...
+2018-Jan-06 14:50:46.030365 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-06 14:50:46.030401 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-06 14:50:46.030436 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-06 14:50:46.030530 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-06 14:50:46.030659 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-06 14:50:46.030682 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 14:50:46.030708 INFO    [Blockchain] Loading blockchain indices for BlockchainExplorer...
+2018-Jan-06 14:50:46.030755 WARNING [Blockchain] No actual blockchain indices for BlockchainExplorer found, rebuilding...
+2018-Jan-06 14:50:46.030781 INFO    [Blockchain] Height 0 of 78
+2018-Jan-06 14:50:46.034313 INFO    [Blockchain] Rebuilding blockchain indices took: 0.00353242
+2018-Jan-06 14:50:46.034386 INFO    [Blockchain] Blockchain initialized. last block: 77, d0.h00.m02.s51 time ago, current difficulty: 385270
+2018-Jan-06 14:50:46.034444 INFO    [daemon] Core initialized OK
+2018-Jan-06 14:50:46.034571 INFO    [daemon] Starting core rpc server on address 0.0.0.0:24182
+2018-Jan-06 14:50:46.034663 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 14:50:46.034703 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 14:50:46.034740 INFO    [node_server] Starting node_server
+2018-Jan-06 14:50:46.035034 INFO    [protocol] 
+2018-Jan-06 14:50:46.035034 INFO    [protocol] **********************************************************************
+2018-Jan-06 14:50:46.035034 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-06 14:50:46.035034 INFO    [protocol] 
+2018-Jan-06 14:50:46.035034 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-06 14:50:46.035034 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-06 14:50:46.035034 INFO    [protocol] 
+2018-Jan-06 14:50:46.035034 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-06 14:50:46.035034 INFO    [protocol] **********************************************************************
+2018-Jan-06 14:50:46.035932 INFO    [core] 
+2018-Jan-06 14:50:46.035932 INFO    [core] **********************************************************************
+2018-Jan-06 14:50:46.035932 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 14:50:46.035932 INFO    [core] 
+2018-Jan-06 14:50:46.035932 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 14:50:46.035932 INFO    [core] 
+2018-Jan-06 14:50:46.035932 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 14:50:46.035932 INFO    [core] 
+2018-Jan-06 14:50:46.035932 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 14:50:46.035932 INFO    [core] **********************************************************************
+2018-Jan-06 14:53:42.610990 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:42.611136 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:42.611303 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:42.611396 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:42.611468 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:42.611509 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:54.300190 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:54.301093 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:54.301170 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:54.301214 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:54.301254 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:54.301292 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:53:59.310631 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:55:34.406368 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:55:34.406489 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:55:34.406601 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:55:34.406712 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:55:34.406786 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 14:55:34.406855 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:00:40.390114 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:00:40.390511 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:00:40.390589 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:00:40.390864 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:02:06.453012 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:02:06.453111 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:02:06.453180 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.741210 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.741342 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.741437 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.741969 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.742258 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.742589 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.744518 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.744682 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.744760 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.744830 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.745143 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:04:43.745546 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.594746 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.595221 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.595404 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.596806 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.597135 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.597224 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.597279 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:02.597337 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.837369 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.837509 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.839600 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.839670 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.840868 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.840954 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.841012 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:05:13.841079 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:06:01.823294 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:06:01.823438 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:06:01.825538 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:06:01.826187 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:06:01.826278 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:06:01.826364 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:06:01.826431 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:04.654854 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:04.654929 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:04.656187 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:04.656787 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:04.657368 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:04.657440 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:24.192684 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:24.192800 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:24.192852 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:24.192903 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:24.193052 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:49.665595 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:49.665844 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:24:49.665938 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:32:36.840010 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:32:36.840224 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:32:36.840314 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:13.890207 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:13.890466 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:13.890588 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:13.890666 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:13.890736 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:36.843146 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:36.843397 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:36.843616 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:34:36.843739 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:35:18.588765 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:35:18.588883 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:38:34.401578 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:40:37.840743 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:40:37.841419 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:40:37.842164 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:08.944308 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:08.945130 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:08.945239 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:08.945332 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:08.945373 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:08.945814 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:10.362695 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:23.951199 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:23.951324 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:23.951386 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:23.951850 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:23.952303 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:41:23.952371 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:42:08.964964 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:42:08.965070 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:42:08.965124 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:42:08.965275 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:42:08.965409 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:42:08.966051 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:00.288640 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:00.289196 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:00.289270 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:00.289618 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:00.289690 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:00.289733 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:15.295730 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:15.295829 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:15.296245 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:15.296318 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:44.356917 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:44.357498 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:44.357787 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:44.358814 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:49.275454 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:57.460743 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:57.461912 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:43:57.461985 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:45:10.337751 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:45:10.338213 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:45:10.339279 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:45:10.339368 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:45:10.339761 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:45:10.339838 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:45:24.306577 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:46:30.859344 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:46:30.860020 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:46:30.860113 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:46:30.860765 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:46:30.861937 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:46:30.862536 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:47:00.867278 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:47:00.867946 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:47:00.868259 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:47:00.868507 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:47:00.869260 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:47:00.869439 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:49:15.848731 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:49:15.848848 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:49:15.849077 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:57:44.851822 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:57:44.852935 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 15:57:44.853038 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:03:34.022566 WARNING [Blockchain] 4e42fc0549473be44ef7f3a96a8b950700500995003bb93394bf758994a18a65
+2018-Jan-06 16:03:51.160173 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:03:51.160973 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:03:51.161684 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:03:51.162329 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:03:51.162880 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:18.762116 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:18.762236 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:18.762480 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:18.762886 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:18.762943 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:18.762985 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:30.533890 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:30.533979 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:30.534032 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:30.534080 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:30.534126 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:30.534190 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:48.693869 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:48.693972 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:08:48.694755 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:09:06.244816 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:09:06.245060 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:09:06.245151 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:09:06.245225 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:15:10.682784 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:15:10.683457 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:15:10.684599 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:15:10.684674 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:15:10.684870 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:15:10.685071 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:22:13.400908 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:22:13.401809 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:22:13.401935 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:22:13.402007 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:22:13.402074 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:22:13.402142 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:23:11.562059 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:23:11.562228 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:23:11.562326 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:23:11.563090 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:23:11.563250 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:29:26.758964 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:29:26.759503 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:29:26.760238 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:29:26.760435 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:30:21.678057 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:30:21.678145 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 16:30:21.678252 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 20:38:48.286850 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 20:38:48.289313 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 20:40:20.923684 INFO    [node_server] Stop signal sent
+2018-Jan-06 20:40:20.923759 INFO    [node_server] Stopping NodeServer and it's2 connections...
+2018-Jan-06 20:40:20.923916 INFO    [node_server] NodeServer loop stopped
+2018-Jan-06 20:40:20.923971 INFO    [daemon] p2p net loop stopped
+2018-Jan-06 20:40:20.924009 INFO    [daemon] Stopping core rpc server...
+2018-Jan-06 20:40:20.924113 INFO    [daemon] Deinitializing core...
+2018-Jan-06 20:40:20.924141 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 20:40:20.924273 INFO    [Blockchain] Saving blockchain...
+2018-Jan-06 20:40:20.924326 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-06 20:40:20.924365 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-06 20:40:20.924442 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-06 20:40:20.924520 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-06 20:40:20.924616 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-06 20:40:20.924640 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 20:40:20.924681 INFO    [Blockchain] Saving blockchain indices...
+2018-Jan-06 20:40:20.924723 INFO    [BlockchainIndicesSerializer] - saving paymentID index...
+2018-Jan-06 20:40:20.924747 INFO    [BlockchainIndicesSerializer] - saving timestamp index...
+2018-Jan-06 20:40:20.924802 INFO    [BlockchainIndicesSerializer] - saving generated transactions index...
+2018-Jan-06 20:40:20.924847 INFO    [daemon] Deinitializing p2p...
+2018-Jan-06 20:40:20.924933 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 20:40:20.925180 INFO    [daemon] Node stopped.
+2018-Jan-06 21:18:04.053894 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 21:18:04.053995 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 21:18:04.054596 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 21:18:04.054680 INFO    [node_server] Generated new peer ID: 10031759774009831808
+2018-Jan-06 21:18:04.054707 INFO    [node_server] Network: aa6700f3-3c21-5d4b-b465-27bb51fcb4c5
+2018-Jan-06 21:18:04.054732 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 21:18:04.054767 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 21:18:04.054797 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 21:18:08.059241 INFO    [node_server] No IGD was found.
+2018-Jan-06 21:18:08.059302 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 21:18:08.059343 INFO    [daemon] Initializing core...
+2018-Jan-06 21:18:08.059483 INFO    [Blockchain] Blockchain not loaded, generating genesis block.
+2018-Jan-06 21:18:08.059575 INFO    [Blockchain] Blockchain initialized. last block: 0, d2012.h16.m18.s08 time ago, current difficulty: 1
+2018-Jan-06 21:18:08.059602 INFO    [daemon] Core initialized OK
+2018-Jan-06 21:18:08.059727 INFO    [daemon] Starting core rpc server on address 127.0.0.1:24182
+2018-Jan-06 21:18:08.059778 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 21:18:08.059809 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 21:18:08.059833 INFO    [node_server] Starting node_server
+2018-Jan-06 21:18:08.060446 INFO    [protocol] 
+2018-Jan-06 21:18:08.060446 INFO    [protocol] **********************************************************************
+2018-Jan-06 21:18:08.060446 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-06 21:18:08.060446 INFO    [protocol] 
+2018-Jan-06 21:18:08.060446 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-06 21:18:08.060446 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-06 21:18:08.060446 INFO    [protocol] 
+2018-Jan-06 21:18:08.060446 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-06 21:18:08.060446 INFO    [protocol] **********************************************************************
+2018-Jan-06 21:18:08.060801 INFO    [core] 
+2018-Jan-06 21:18:08.060801 INFO    [core] **********************************************************************
+2018-Jan-06 21:18:08.060801 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 21:18:08.060801 INFO    [core] 
+2018-Jan-06 21:18:08.060801 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 21:18:08.060801 INFO    [core] 
+2018-Jan-06 21:18:08.060801 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 21:18:08.060801 INFO    [core] 
+2018-Jan-06 21:18:08.060801 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 21:18:08.060801 INFO    [core] **********************************************************************
+2018-Jan-06 21:18:49.006571 INFO    [node_server] Stop signal sent
+2018-Jan-06 21:18:49.006675 INFO    [node_server] Stopping NodeServer and it's0 connections...
+2018-Jan-06 21:18:49.006747 INFO    [node_server] NodeServer loop stopped
+2018-Jan-06 21:18:49.006775 INFO    [daemon] p2p net loop stopped
+2018-Jan-06 21:18:49.006797 INFO    [daemon] Stopping core rpc server...
+2018-Jan-06 21:18:49.006837 INFO    [daemon] Deinitializing core...
+2018-Jan-06 21:18:49.006865 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 21:18:49.006969 INFO    [Blockchain] Saving blockchain...
+2018-Jan-06 21:18:49.007045 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-06 21:18:49.007075 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-06 21:18:49.007099 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-06 21:18:49.007123 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-06 21:18:49.007146 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-06 21:18:49.007169 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 21:18:49.007200 INFO    [daemon] Deinitializing p2p...
+2018-Jan-06 21:18:49.007295 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 21:18:49.007369 INFO    [daemon] Node stopped.
+2018-Jan-06 21:19:09.169274 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 21:19:09.169365 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 21:19:09.170765 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 21:19:09.170865 INFO    [node_server] Network: aa6700f3-3c21-5d4b-b465-27bb51fcb4c5
+2018-Jan-06 21:19:09.170897 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 21:19:09.170933 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 21:19:09.170957 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 21:19:13.175333 INFO    [node_server] No IGD was found.
+2018-Jan-06 21:19:13.175424 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 21:19:13.175468 INFO    [daemon] Initializing core...
+2018-Jan-06 21:19:13.175540 INFO    [Blockchain] Loading blockchain...
+2018-Jan-06 21:19:13.175612 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-06 21:19:13.175641 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-06 21:19:13.175664 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-06 21:19:13.175685 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-06 21:19:13.175706 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-06 21:19:13.175726 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 21:19:13.175751 INFO    [Blockchain] Loading blockchain indices for BlockchainExplorer...
+2018-Jan-06 21:19:13.175790 WARNING [Blockchain] No actual blockchain indices for BlockchainExplorer found, rebuilding...
+2018-Jan-06 21:19:13.175816 INFO    [Blockchain] Height 0 of 1
+2018-Jan-06 21:19:13.175851 INFO    [Blockchain] Rebuilding blockchain indices took: 3.4914e-05
+2018-Jan-06 21:19:13.175894 INFO    [Blockchain] Blockchain initialized. last block: 0, d2012.h16.m19.s13 time ago, current difficulty: 1
+2018-Jan-06 21:19:13.175919 INFO    [daemon] Core initialized OK
+2018-Jan-06 21:19:13.175993 INFO    [daemon] Starting core rpc server on address 0.0.0.0:24182
+2018-Jan-06 21:19:13.176050 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 21:19:13.176190 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 21:19:13.176234 INFO    [node_server] Starting node_server
+2018-Jan-06 21:19:13.176811 INFO    [protocol] 
+2018-Jan-06 21:19:13.176811 INFO    [protocol] **********************************************************************
+2018-Jan-06 21:19:13.176811 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-06 21:19:13.176811 INFO    [protocol] 
+2018-Jan-06 21:19:13.176811 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-06 21:19:13.176811 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-06 21:19:13.176811 INFO    [protocol] 
+2018-Jan-06 21:19:13.176811 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-06 21:19:13.176811 INFO    [protocol] **********************************************************************
+2018-Jan-06 21:19:13.177205 INFO    [core] 
+2018-Jan-06 21:19:13.177205 INFO    [core] **********************************************************************
+2018-Jan-06 21:19:13.177205 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 21:19:13.177205 INFO    [core] 
+2018-Jan-06 21:19:13.177205 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 21:19:13.177205 INFO    [core] 
+2018-Jan-06 21:19:13.177205 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 21:19:13.177205 INFO    [core] 
+2018-Jan-06 21:19:13.177205 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 21:19:13.177205 INFO    [core] **********************************************************************
+2018-Jan-06 21:29:04.953599 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 2
+2018-Jan-06 21:29:04.953599 INFO    [Blockchain] id:	ba35087d763f1ec06a1c9cbabbc902f532d975770afcd170282d3b282ce6d0b8
+2018-Jan-06 21:29:04.953599 INFO    [Blockchain] PoW:	c334ca0e9eea05b3be29b54b942e6b554329a8c9c282819870af4bedf3df0500
+2018-Jan-06 21:29:04.953599 INFO    [Blockchain] difficulty:	1
+2018-Jan-06 21:29:17.388906 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 4
+2018-Jan-06 21:29:17.388906 INFO    [Blockchain] id:	65a28daa0ccea442ecb76a5e2980fab4ca51ab2362605215b441df06d3675ff3
+2018-Jan-06 21:29:17.388906 INFO    [Blockchain] PoW:	8bd8f42db8d62f768f4264a484e9831f61d3a11e7e13845c20421a46baff0200
+2018-Jan-06 21:29:17.388906 INFO    [Blockchain] difficulty:	4
+2018-Jan-06 21:29:21.529878 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 5
+2018-Jan-06 21:29:21.529878 INFO    [Blockchain] id:	46fe7576dcc9473ba5503e044c289a79fe2bf1647d55a6b59b996dfe70ec1b22
+2018-Jan-06 21:29:21.529878 INFO    [Blockchain] PoW:	51a0e91793aa551ef5a33d2aa16d4113ffa7f37834e79857cf2dc589ec1f0200
+2018-Jan-06 21:29:21.529878 INFO    [Blockchain] difficulty:	9
+2018-Jan-06 21:42:45.522560 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:42:45.522667 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:42:45.522855 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:42:45.522912 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:42:45.522989 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:42:45.523030 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:43:43.630477 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:43:43.631239 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:43:43.631377 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:43:43.632480 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:43:57.467878 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:43:57.468761 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 21:43:57.468862 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-06 22:32:20.318309 INFO    [node_server] Stop signal sent
+2018-Jan-06 22:32:20.318990 INFO    [node_server] Stopping NodeServer and it's1 connections...
+2018-Jan-06 22:32:20.319637 INFO    [node_server] NodeServer loop stopped
+2018-Jan-06 22:32:20.319786 INFO    [daemon] p2p net loop stopped
+2018-Jan-06 22:32:20.319814 INFO    [daemon] Stopping core rpc server...
+2018-Jan-06 22:32:20.320206 INFO    [daemon] Deinitializing core...
+2018-Jan-06 22:32:20.320231 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 22:32:20.320458 INFO    [Blockchain] Saving blockchain...
+2018-Jan-06 22:32:20.320513 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-06 22:32:20.320658 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-06 22:32:20.320715 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-06 22:32:20.320736 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-06 22:32:20.320864 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-06 22:32:20.320889 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 22:32:20.320929 INFO    [Blockchain] Saving blockchain indices...
+2018-Jan-06 22:32:20.321152 INFO    [BlockchainIndicesSerializer] - saving paymentID index...
+2018-Jan-06 22:32:20.321191 INFO    [BlockchainIndicesSerializer] - saving timestamp index...
+2018-Jan-06 22:32:20.321242 INFO    [BlockchainIndicesSerializer] - saving generated transactions index...
+2018-Jan-06 22:32:20.321273 INFO    [daemon] Deinitializing p2p...
+2018-Jan-06 22:32:20.322146 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 22:32:20.323096 INFO    [daemon] Node stopped.
+2018-Jan-06 22:32:26.653216 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 22:32:26.653315 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 22:32:26.653837 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 22:32:26.653920 INFO    [node_server] Network: 3bc9b05e-8f25-5119-b73c-a619dd0dc2aa
+2018-Jan-06 22:32:26.653968 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 22:32:26.654034 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 22:32:26.654088 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 22:32:30.658560 INFO    [node_server] No IGD was found.
+2018-Jan-06 22:32:30.658647 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 22:32:30.658674 INFO    [daemon] Initializing core...
+2018-Jan-06 22:32:30.658786 INFO    [Blockchain] Blockchain not loaded, generating genesis block.
+2018-Jan-06 22:32:30.658931 INFO    [Blockchain] Blockchain initialized. last block: 0, d2012.h17.m32.s30 time ago, current difficulty: 1
+2018-Jan-06 22:32:30.658966 INFO    [daemon] Core initialized OK
+2018-Jan-06 22:32:30.659044 INFO    [daemon] Starting core rpc server on address 127.0.0.1:24182
+2018-Jan-06 22:32:30.659105 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 22:32:30.659140 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 22:32:30.659164 INFO    [node_server] Starting node_server
+2018-Jan-06 22:32:30.659499 INFO    [node_server] [54.37.94.170:49647 INC] WRONG NETWORK AGENT CONNECTED! id=aa6700f3-3c21-5d4b-b465-27bb51fcb4c5
+2018-Jan-06 22:32:30.660210 ERROR   [node_server] [54.37.94.170:24181 OUT] Failed to invoke COMMAND_HANDSHAKE, closing connection.
+2018-Jan-06 22:32:30.660353 INFO    [core] 
+2018-Jan-06 22:32:30.660353 INFO    [core] **********************************************************************
+2018-Jan-06 22:32:30.660353 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 22:32:30.660353 INFO    [core] 
+2018-Jan-06 22:32:30.660353 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 22:32:30.660353 INFO    [core] 
+2018-Jan-06 22:32:30.660353 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 22:32:30.660353 INFO    [core] 
+2018-Jan-06 22:32:30.660353 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 22:32:30.660353 INFO    [core] **********************************************************************
+2018-Jan-06 22:32:32.660386 INFO    [node_server] [54.37.94.170:49857 INC] WRONG NETWORK AGENT CONNECTED! id=aa6700f3-3c21-5d4b-b465-27bb51fcb4c5
+2018-Jan-06 22:32:32.661116 ERROR   [node_server] [54.37.94.170:24181 OUT] Failed to invoke COMMAND_HANDSHAKE, closing connection.
+2018-Jan-06 22:32:34.661235 INFO    [node_server] [54.37.94.170:37697 INC] WRONG NETWORK AGENT CONNECTED! id=aa6700f3-3c21-5d4b-b465-27bb51fcb4c5
+2018-Jan-06 22:32:34.661770 ERROR   [node_server] [54.37.94.170:24181 OUT] Failed to invoke COMMAND_HANDSHAKE, closing connection.
+2018-Jan-06 22:32:36.662017 INFO    [node_server] [54.37.94.170:52565 INC] WRONG NETWORK AGENT CONNECTED! id=aa6700f3-3c21-5d4b-b465-27bb51fcb4c5
+2018-Jan-06 22:32:36.662783 ERROR   [node_server] [54.37.94.170:24181 OUT] Failed to invoke COMMAND_HANDSHAKE, closing connection.
+2018-Jan-06 22:32:38.662918 INFO    [node_server] [54.37.94.170:58207 INC] WRONG NETWORK AGENT CONNECTED! id=aa6700f3-3c21-5d4b-b465-27bb51fcb4c5
+2018-Jan-06 22:32:38.663655 ERROR   [node_server] [54.37.94.170:24181 OUT] Failed to invoke COMMAND_HANDSHAKE, closing connection.
+2018-Jan-06 22:32:40.377772 INFO    [node_server] Stop signal sent
+2018-Jan-06 22:32:40.377865 INFO    [node_server] Stopping NodeServer and it's0 connections...
+2018-Jan-06 22:32:40.377927 INFO    [node_server] NodeServer loop stopped
+2018-Jan-06 22:32:40.377953 INFO    [daemon] p2p net loop stopped
+2018-Jan-06 22:32:40.377976 INFO    [daemon] Stopping core rpc server...
+2018-Jan-06 22:32:40.378015 INFO    [daemon] Deinitializing core...
+2018-Jan-06 22:32:40.378047 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 22:32:40.378128 INFO    [Blockchain] Saving blockchain...
+2018-Jan-06 22:32:40.378179 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-06 22:32:40.378208 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-06 22:32:40.378232 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-06 22:32:40.378255 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-06 22:32:40.378279 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-06 22:32:40.378302 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 22:32:40.378339 INFO    [daemon] Deinitializing p2p...
+2018-Jan-06 22:32:40.378445 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-06 22:32:40.378547 INFO    [daemon] Node stopped.
+2018-Jan-06 22:33:48.075940 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-06 22:33:48.076029 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-06 22:33:48.076545 INFO    [daemon] Initializing p2p server...
+2018-Jan-06 22:33:48.076626 INFO    [node_server] Network: 3bc9b05e-8f25-5119-b73c-a619dd0dc2aa
+2018-Jan-06 22:33:48.076655 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-06 22:33:48.076692 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-06 22:33:48.076716 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-06 22:33:52.081160 INFO    [node_server] No IGD was found.
+2018-Jan-06 22:33:52.081229 INFO    [daemon] P2p server initialized OK
+2018-Jan-06 22:33:52.081269 INFO    [daemon] Initializing core...
+2018-Jan-06 22:33:52.081342 INFO    [Blockchain] Loading blockchain...
+2018-Jan-06 22:33:52.081417 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-06 22:33:52.081450 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-06 22:33:52.081473 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-06 22:33:52.081495 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-06 22:33:52.081517 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-06 22:33:52.081539 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-06 22:33:52.081564 INFO    [Blockchain] Loading blockchain indices for BlockchainExplorer...
+2018-Jan-06 22:33:52.081606 WARNING [Blockchain] No actual blockchain indices for BlockchainExplorer found, rebuilding...
+2018-Jan-06 22:33:52.081634 INFO    [Blockchain] Height 0 of 1
+2018-Jan-06 22:33:52.081670 INFO    [Blockchain] Rebuilding blockchain indices took: 3.6728e-05
+2018-Jan-06 22:33:52.081717 INFO    [Blockchain] Blockchain initialized. last block: 0, d2012.h17.m33.s52 time ago, current difficulty: 1
+2018-Jan-06 22:33:52.081744 INFO    [daemon] Core initialized OK
+2018-Jan-06 22:33:52.081835 INFO    [daemon] Starting core rpc server on address 0.0.0.0:24182
+2018-Jan-06 22:33:52.081930 INFO    [daemon] Core rpc server started ok
+2018-Jan-06 22:33:52.081978 INFO    [daemon] Starting p2p net loop...
+2018-Jan-06 22:33:52.082018 INFO    [node_server] Starting node_server
+2018-Jan-06 22:33:52.082445 INFO    [protocol] 
+2018-Jan-06 22:33:52.082445 INFO    [protocol] **********************************************************************
+2018-Jan-06 22:33:52.082445 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-06 22:33:52.082445 INFO    [protocol] 
+2018-Jan-06 22:33:52.082445 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-06 22:33:52.082445 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-06 22:33:52.082445 INFO    [protocol] 
+2018-Jan-06 22:33:52.082445 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-06 22:33:52.082445 INFO    [protocol] **********************************************************************
+2018-Jan-06 22:33:52.083318 INFO    [core] 
+2018-Jan-06 22:33:52.083318 INFO    [core] **********************************************************************
+2018-Jan-06 22:33:52.083318 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-06 22:33:52.083318 INFO    [core] 
+2018-Jan-06 22:33:52.083318 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-06 22:33:52.083318 INFO    [core] 
+2018-Jan-06 22:33:52.083318 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-06 22:33:52.083318 INFO    [core] 
+2018-Jan-06 22:33:52.083318 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-06 22:33:52.083318 INFO    [core] **********************************************************************
+2018-Jan-07 00:32:53.755557 INFO    [txpool] transaction fee is not enough: 0.01000000, minimum fee: 1000.00000000
+2018-Jan-07 00:32:53.755618 INFO    [core] Transaction verification failed: 6a786ba65db3da42564c971b955e6aeb9c0d0088a7ab57324c29a4815bdbee7f
+2018-Jan-07 00:32:53.755660 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-07 00:33:53.811656 INFO    [txpool] transaction fee is not enough: 0.01000000, minimum fee: 1000.00000000
+2018-Jan-07 00:33:53.811718 INFO    [core] Transaction verification failed: 99337359606b8331275a71ae8f108a267af89534056489cd283d8ace43105500
+2018-Jan-07 00:33:53.811761 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-07 00:34:53.867507 INFO    [txpool] transaction fee is not enough: 0.01000000, minimum fee: 1000.00000000
+2018-Jan-07 00:34:53.867568 INFO    [core] Transaction verification failed: 8e68f3d4f98c9d25c7049d8500ccce81bb70e8088e49d4737cb4cb7f36f7b6db
+2018-Jan-07 00:34:53.867612 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-07 00:35:53.924251 INFO    [txpool] transaction fee is not enough: 0.01000000, minimum fee: 1000.00000000
+2018-Jan-07 00:35:53.924313 INFO    [core] Transaction verification failed: 931309b7b8d965f1c7babf7a91c32552154c910363159aea1bbed8571a59cb01
+2018-Jan-07 00:35:53.924356 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-07 00:37:11.841760 INFO    [node_server] Stop signal sent
+2018-Jan-07 00:37:11.841865 INFO    [node_server] Stopping NodeServer and it's2 connections...
+2018-Jan-07 00:37:11.842056 INFO    [node_server] NodeServer loop stopped
+2018-Jan-07 00:37:11.842110 INFO    [daemon] p2p net loop stopped
+2018-Jan-07 00:37:11.842163 INFO    [daemon] Stopping core rpc server...
+2018-Jan-07 00:37:11.842284 INFO    [daemon] Deinitializing core...
+2018-Jan-07 00:37:11.842313 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-07 00:37:11.842413 INFO    [Blockchain] Saving blockchain...
+2018-Jan-07 00:37:11.842466 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-07 00:37:11.842500 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-07 00:37:11.842529 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-07 00:37:11.842552 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-07 00:37:11.842583 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-07 00:37:11.842690 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-07 00:37:11.842823 INFO    [Blockchain] Saving blockchain indices...
+2018-Jan-07 00:37:11.842893 INFO    [BlockchainIndicesSerializer] - saving paymentID index...
+2018-Jan-07 00:37:11.842931 INFO    [BlockchainIndicesSerializer] - saving timestamp index...
+2018-Jan-07 00:37:11.842962 INFO    [BlockchainIndicesSerializer] - saving generated transactions index...
+2018-Jan-07 00:37:11.842999 INFO    [daemon] Deinitializing p2p...
+2018-Jan-07 00:37:11.843166 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-07 00:37:11.843263 INFO    [daemon] Node stopped.
+2018-Jan-07 00:37:13.471305 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-07 00:37:13.471399 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-07 00:37:13.472015 INFO    [daemon] Initializing p2p server...
+2018-Jan-07 00:37:13.472092 INFO    [node_server] Network: 3bc9b05e-8f25-5119-b73c-a619dd0dc2aa
+2018-Jan-07 00:37:13.472122 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-07 00:37:13.472160 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-07 00:37:13.472185 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-07 00:37:17.476660 INFO    [node_server] No IGD was found.
+2018-Jan-07 00:37:17.476733 INFO    [daemon] P2p server initialized OK
+2018-Jan-07 00:37:17.476819 INFO    [daemon] Initializing core...
+2018-Jan-07 00:37:17.476958 INFO    [Blockchain] Loading blockchain...
+2018-Jan-07 00:37:17.477058 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-07 00:37:17.477105 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-07 00:37:17.477146 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-07 00:37:17.477183 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-07 00:37:17.477277 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-07 00:37:17.477299 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-07 00:37:17.477339 INFO    [Blockchain] Loading blockchain indices for BlockchainExplorer...
+2018-Jan-07 00:37:17.477382 INFO    [BlockchainIndicesSerializer] - loading paymentID index...
+2018-Jan-07 00:37:17.477407 INFO    [BlockchainIndicesSerializer] - loading timestamp index...
+2018-Jan-07 00:37:17.477435 INFO    [BlockchainIndicesSerializer] - loading generated transactions index...
+2018-Jan-07 00:37:17.477644 INFO    [Blockchain] Blockchain initialized. last block: 35, d0.h00.m01.s17 time ago, current difficulty: 471477
+2018-Jan-07 00:37:17.477676 INFO    [daemon] Core initialized OK
+2018-Jan-07 00:37:17.477741 INFO    [daemon] Starting core rpc server on address 0.0.0.0:24182
+2018-Jan-07 00:37:17.477806 INFO    [daemon] Core rpc server started ok
+2018-Jan-07 00:37:17.477851 INFO    [daemon] Starting p2p net loop...
+2018-Jan-07 00:37:17.477899 INFO    [node_server] Starting node_server
+2018-Jan-07 00:37:17.478195 INFO    [protocol] 
+2018-Jan-07 00:37:17.478195 INFO    [protocol] **********************************************************************
+2018-Jan-07 00:37:17.478195 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-07 00:37:17.478195 INFO    [protocol] 
+2018-Jan-07 00:37:17.478195 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-07 00:37:17.478195 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-07 00:37:17.478195 INFO    [protocol] 
+2018-Jan-07 00:37:17.478195 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-07 00:37:17.478195 INFO    [protocol] **********************************************************************
+2018-Jan-07 00:37:17.479129 INFO    [core] 
+2018-Jan-07 00:37:17.479129 INFO    [core] **********************************************************************
+2018-Jan-07 00:37:17.479129 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-07 00:37:17.479129 INFO    [core] 
+2018-Jan-07 00:37:17.479129 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-07 00:37:17.479129 INFO    [core] 
+2018-Jan-07 00:37:17.479129 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-07 00:37:17.479129 INFO    [core] 
+2018-Jan-07 00:37:17.479129 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-07 00:37:17.479129 INFO    [core] **********************************************************************
+2018-Jan-07 00:37:31.804553 INFO    [txpool] transaction fee is not enough: 0.01000000, minimum fee: 1000.00000000
+2018-Jan-07 00:37:31.804617 INFO    [core] Transaction verification failed: 53a2083ab055dfc5adda54b58b35903f728d69f02c1b2d40275eb85ce62a9456
+2018-Jan-07 00:37:31.804649 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-07 00:39:28.481736 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 05:43:56.284585 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 113
+2018-Jan-07 05:43:56.284585 INFO    [Blockchain] id:	29bbb408dc2b069730a473edfd7bad65a914f1aca3491580eebed8a976cddea9
+2018-Jan-07 05:43:56.284585 INFO    [Blockchain] PoW:	5f7f0308d284741edd8a31f241aaaa2e26febdefb7de30c9fc4f6ff0e5180000
+2018-Jan-07 05:43:56.284585 INFO    [Blockchain] difficulty:	481464
+2018-Jan-07 09:05:39.956767 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 175
+2018-Jan-07 09:05:39.956767 INFO    [Blockchain] id:	6a2afbbfd35e575ba23d76317ee3954a2c9520f1d3bff501bde2be199b410940
+2018-Jan-07 09:05:39.956767 INFO    [Blockchain] PoW:	db206946396a4142ab5d5f20a93a0d7e262878277024f091039b956435190000
+2018-Jan-07 09:05:39.956767 INFO    [Blockchain] difficulty:	514227
+2018-Jan-07 11:31:56.649592 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:32:12.152181 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:35:27.193567 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:35:27.194089 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:35:27.194176 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:35:27.194294 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:35:27.194372 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:35:27.194449 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:36:37.389181 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:36:37.389320 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:36:37.389374 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:36:37.389813 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:36:37.390279 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:36:37.390336 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:49:16.897992 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:49:16.898087 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:49:16.898136 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:49:16.898232 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 11:49:16.898278 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 12:10:03.111948 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 12:10:03.114034 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 12:10:03.114308 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 12:10:03.114414 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 12:11:00.481061 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 12:11:00.481205 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 12:11:00.481442 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 14:00:01.001741 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 14:00:01.003129 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 14:00:01.003268 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 14:00:01.003379 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 17:53:45.354738 INFO    [node_server] Stop signal sent
+2018-Jan-07 17:53:45.355671 INFO    [node_server] Stopping NodeServer and it's2 connections...
+2018-Jan-07 17:53:45.360582 INFO    [node_server] NodeServer loop stopped
+2018-Jan-07 17:53:45.360759 INFO    [daemon] p2p net loop stopped
+2018-Jan-07 17:53:45.360784 INFO    [daemon] Stopping core rpc server...
+2018-Jan-07 17:53:45.360822 INFO    [daemon] Deinitializing core...
+2018-Jan-07 17:53:45.360868 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-07 17:53:45.362179 INFO    [Blockchain] Saving blockchain...
+2018-Jan-07 17:53:45.362961 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-07 17:53:45.367543 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-07 17:53:45.369225 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-07 17:53:45.369797 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-07 17:53:45.370687 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-07 17:53:45.370714 INFO    [BlockCacheSerializer] Serialization time: 7ms
+2018-Jan-07 17:53:45.370769 INFO    [Blockchain] Saving blockchain indices...
+2018-Jan-07 17:53:45.370812 INFO    [BlockchainIndicesSerializer] - saving paymentID index...
+2018-Jan-07 17:53:45.370837 INFO    [BlockchainIndicesSerializer] - saving timestamp index...
+2018-Jan-07 17:53:45.371481 INFO    [BlockchainIndicesSerializer] - saving generated transactions index...
+2018-Jan-07 17:53:45.371899 INFO    [daemon] Deinitializing p2p...
+2018-Jan-07 17:53:45.372697 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-07 17:53:45.377244 INFO    [daemon] Node stopped.
+2018-Jan-07 18:24:29.181255 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-07 18:24:29.181383 INFO    [daemon] Module folder: ./src/ipbcd
+2018-Jan-07 18:24:29.181935 INFO    [daemon] Initializing p2p server...
+2018-Jan-07 18:24:29.182142 INFO    [node_server] Network: fbd92381-c9bb-54b9-9785-7811f699090c
+2018-Jan-07 18:24:29.182213 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-07 18:24:29.182278 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-07 18:24:29.182303 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-07 18:24:33.186889 INFO    [node_server] No IGD was found.
+2018-Jan-07 18:24:33.186957 INFO    [daemon] P2p server initialized OK
+2018-Jan-07 18:24:33.186997 INFO    [daemon] Initializing core...
+2018-Jan-07 18:24:33.187226 INFO    [Blockchain] Loading blockchain...
+2018-Jan-07 18:24:33.187445 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-07 18:24:33.187565 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-07 18:24:33.187718 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-07 18:24:33.188378 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-07 18:24:33.188945 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-07 18:24:33.188974 INFO    [BlockCacheSerializer] Serialization time: 1ms
+2018-Jan-07 18:24:33.189099 ERROR   [Blockchain] Failed to init: genesis block mismatch. Probably you set --testnet flag with data dir with non-test blockchain or another network.
+2018-Jan-07 18:24:33.189141 ERROR   [core] Failed to initialize blockchain storage
+2018-Jan-07 18:24:33.189176 ERROR   [daemon] Failed to initialize core
+2018-Jan-07 18:24:33.189214 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-07 18:25:07.423326 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-07 18:25:07.423416 INFO    [daemon] Module folder: ./src/ipbcd
+2018-Jan-07 18:25:07.424013 INFO    [daemon] Initializing p2p server...
+2018-Jan-07 18:25:07.424098 INFO    [node_server] Generated new peer ID: 9381858477207115202
+2018-Jan-07 18:25:07.424124 INFO    [node_server] Network: fbd92381-c9bb-54b9-9785-7811f699090c
+2018-Jan-07 18:25:07.424150 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-07 18:25:07.424223 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-07 18:25:07.424246 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-07 18:25:11.428709 INFO    [node_server] No IGD was found.
+2018-Jan-07 18:25:11.428782 INFO    [daemon] P2p server initialized OK
+2018-Jan-07 18:25:11.428821 INFO    [daemon] Initializing core...
+2018-Jan-07 18:25:11.428922 INFO    [Blockchain] Blockchain not loaded, generating genesis block.
+2018-Jan-07 18:25:11.429137 INFO    [Blockchain] Blockchain initialized. last block: 0, d2013.h13.m25.s11 time ago, current difficulty: 1
+2018-Jan-07 18:25:11.429188 INFO    [daemon] Core initialized OK
+2018-Jan-07 18:25:11.429324 INFO    [daemon] Starting core rpc server on address 127.0.0.1:24182
+2018-Jan-07 18:25:11.429415 INFO    [daemon] Core rpc server started ok
+2018-Jan-07 18:25:11.429457 INFO    [daemon] Starting p2p net loop...
+2018-Jan-07 18:25:11.429492 INFO    [node_server] Starting node_server
+2018-Jan-07 18:25:11.430200 INFO    [protocol] 
+2018-Jan-07 18:25:11.430200 INFO    [protocol] **********************************************************************
+2018-Jan-07 18:25:11.430200 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-07 18:25:11.430200 INFO    [protocol] 
+2018-Jan-07 18:25:11.430200 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-07 18:25:11.430200 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-07 18:25:11.430200 INFO    [protocol] 
+2018-Jan-07 18:25:11.430200 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-07 18:25:11.430200 INFO    [protocol] **********************************************************************
+2018-Jan-07 18:25:11.430538 INFO    [core] 
+2018-Jan-07 18:25:11.430538 INFO    [core] **********************************************************************
+2018-Jan-07 18:25:11.430538 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-07 18:25:11.430538 INFO    [core] 
+2018-Jan-07 18:25:11.430538 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-07 18:25:11.430538 INFO    [core] 
+2018-Jan-07 18:25:11.430538 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-07 18:25:11.430538 INFO    [core] 
+2018-Jan-07 18:25:11.430538 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-07 18:25:11.430538 INFO    [core] **********************************************************************
+2018-Jan-07 18:25:17.239351 INFO    [node_server] Stop signal sent
+2018-Jan-07 18:25:17.239425 INFO    [node_server] Stopping NodeServer and it's0 connections...
+2018-Jan-07 18:25:17.239518 INFO    [node_server] NodeServer loop stopped
+2018-Jan-07 18:25:17.239542 INFO    [daemon] p2p net loop stopped
+2018-Jan-07 18:25:17.239564 INFO    [daemon] Stopping core rpc server...
+2018-Jan-07 18:25:17.239649 INFO    [daemon] Deinitializing core...
+2018-Jan-07 18:25:17.239717 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-07 18:25:17.239811 INFO    [Blockchain] Saving blockchain...
+2018-Jan-07 18:25:17.239870 INFO    [BlockCacheSerializer] - saving block index...
+2018-Jan-07 18:25:17.239910 INFO    [BlockCacheSerializer] - saving transaction map...
+2018-Jan-07 18:25:17.239948 INFO    [BlockCacheSerializer] - saving spent keys...
+2018-Jan-07 18:25:17.239983 INFO    [BlockCacheSerializer] - saving outputs...
+2018-Jan-07 18:25:17.240020 INFO    [BlockCacheSerializer] - saving multi-signature outputs...
+2018-Jan-07 18:25:17.240042 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-07 18:25:17.240070 INFO    [daemon] Deinitializing p2p...
+2018-Jan-07 18:25:17.240152 INFO    [miner] Mining has been stopped, 0 finished
+2018-Jan-07 18:25:17.240220 INFO    [daemon] Node stopped.
+2018-Jan-07 18:26:08.788898 INFO    [daemon] ipbc v1.4.5.750 (613cf98-dirty)
+2018-Jan-07 18:26:08.788994 INFO    [daemon] Module folder: ./ipbcd
+2018-Jan-07 18:26:08.789556 INFO    [daemon] Initializing p2p server...
+2018-Jan-07 18:26:08.789726 INFO    [node_server] Network: fbd92381-c9bb-54b9-9785-7811f699090c
+2018-Jan-07 18:26:08.789760 INFO    [node_server] Binding on 0.0.0.0:24181
+2018-Jan-07 18:26:08.789800 INFO    [node_server] Net service binded on 0.0.0.0:24181
+2018-Jan-07 18:26:08.789826 INFO    [node_server] Attempting to add IGD port mapping.
+2018-Jan-07 18:26:12.793553 INFO    [node_server] No IGD was found.
+2018-Jan-07 18:26:12.793621 INFO    [daemon] P2p server initialized OK
+2018-Jan-07 18:26:12.793662 INFO    [daemon] Initializing core...
+2018-Jan-07 18:26:12.793731 INFO    [Blockchain] Loading blockchain...
+2018-Jan-07 18:26:12.793800 INFO    [BlockCacheSerializer] - loading block index...
+2018-Jan-07 18:26:12.793830 INFO    [BlockCacheSerializer] - loading transaction map...
+2018-Jan-07 18:26:12.793851 INFO    [BlockCacheSerializer] - loading spent keys...
+2018-Jan-07 18:26:12.793871 INFO    [BlockCacheSerializer] - loading outputs...
+2018-Jan-07 18:26:12.793891 INFO    [BlockCacheSerializer] - loading multi-signature outputs...
+2018-Jan-07 18:26:12.793910 INFO    [BlockCacheSerializer] Serialization time: 0ms
+2018-Jan-07 18:26:12.793934 INFO    [Blockchain] Loading blockchain indices for BlockchainExplorer...
+2018-Jan-07 18:26:12.793973 WARNING [Blockchain] No actual blockchain indices for BlockchainExplorer found, rebuilding...
+2018-Jan-07 18:26:12.793998 INFO    [Blockchain] Height 0 of 1
+2018-Jan-07 18:26:12.794032 INFO    [Blockchain] Rebuilding blockchain indices took: 3.4756e-05
+2018-Jan-07 18:26:12.794075 INFO    [Blockchain] Blockchain initialized. last block: 0, d2013.h13.m26.s12 time ago, current difficulty: 1
+2018-Jan-07 18:26:12.794100 INFO    [daemon] Core initialized OK
+2018-Jan-07 18:26:12.794197 INFO    [daemon] Starting core rpc server on address 0.0.0.0:24182
+2018-Jan-07 18:26:12.794291 INFO    [daemon] Core rpc server started ok
+2018-Jan-07 18:26:12.794335 INFO    [daemon] Starting p2p net loop...
+2018-Jan-07 18:26:12.794361 INFO    [node_server] Starting node_server
+2018-Jan-07 18:26:12.795012 INFO    [protocol] 
+2018-Jan-07 18:26:12.795012 INFO    [protocol] **********************************************************************
+2018-Jan-07 18:26:12.795012 INFO    [protocol] You are now synchronized with the network. You may now start simplewallet.
+2018-Jan-07 18:26:12.795012 INFO    [protocol] 
+2018-Jan-07 18:26:12.795012 INFO    [protocol] Please note, that the blockchain will be saved only after you quit the daemon with "exit" command or if you use "save" command.
+2018-Jan-07 18:26:12.795012 INFO    [protocol] Otherwise, you will possibly need to synchronize the blockchain again.
+2018-Jan-07 18:26:12.795012 INFO    [protocol] 
+2018-Jan-07 18:26:12.795012 INFO    [protocol] Use "help" command to see the list of available commands.
+2018-Jan-07 18:26:12.795012 INFO    [protocol] **********************************************************************
+2018-Jan-07 18:26:12.795288 INFO    [core] 
+2018-Jan-07 18:26:12.795288 INFO    [core] **********************************************************************
+2018-Jan-07 18:26:12.795288 INFO    [core] The daemon will start synchronizing with the network. It may take up to several hours.
+2018-Jan-07 18:26:12.795288 INFO    [core] 
+2018-Jan-07 18:26:12.795288 INFO    [core] You can set the level of process detailization* through "set_log <level>" command*, where <level> is between 0 (no details) and 4 (very verbose).
+2018-Jan-07 18:26:12.795288 INFO    [core] 
+2018-Jan-07 18:26:12.795288 INFO    [core] Use "help" command to see the list of available commands.
+2018-Jan-07 18:26:12.795288 INFO    [core] 
+2018-Jan-07 18:26:12.795288 INFO    [core] Note: in case you need to interrupt the process, use "exit" command. Otherwise, the current progress won't be saved.
+2018-Jan-07 18:26:12.795288 INFO    [core] **********************************************************************
+2018-Jan-07 18:47:52.954631 INFO    [txpool] transaction fee is not enough: 0.01000000, minimum fee: 0.10000000
+2018-Jan-07 18:47:52.954691 INFO    [core] Transaction verification failed: d78f6049f1c0fe23047c7b30bde0c0228c36c147eadeb4e5688a0b83167059e8
+2018-Jan-07 18:47:52.954719 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-07 18:48:53.007935 INFO    [txpool] transaction fee is not enough: 0.01000000, minimum fee: 0.10000000
+2018-Jan-07 18:48:53.008006 INFO    [core] Transaction verification failed: 3f003a313e57a4a1353e2db4922e417d354dd67b20201698ca23cc9eea80ba15
+2018-Jan-07 18:48:53.008049 INFO    [RpcServer] [on_send_raw_tx]: Failed to process tx
+2018-Jan-07 19:03:30.489329 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:03:42.979651 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:03:42.979755 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:03:42.980236 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:03:42.980666 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:03:42.980728 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:03:42.980771 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:02.240220 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:02.240489 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:02.240558 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:02.240634 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:25.095583 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:25.095765 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:25.095825 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:25.096402 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:25.096556 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:04:25.096945 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:23.727189 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:23.727324 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:23.727450 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:23.727536 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:23.729176 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:23.729839 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:51.340673 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:51.340816 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:51.340943 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:51.341009 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:51.341323 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:51.341783 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:05:51.341858 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:09:55.626334 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:09:55.626453 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:09:55.626506 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:09:55.626554 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:09:55.626596 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:09:55.626636 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:10:49.505618 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:10:49.506455 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:10:49.507044 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:10:49.507618 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:10:49.507713 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:11:06.888994 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:11:06.889409 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:11:20.257476 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:40.741029 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:40.741436 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:40.741557 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:40.741857 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:40.741932 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:40.742002 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:51.531948 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:51.532051 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:51.532141 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:51.532248 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:15:51.532316 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:16:11.568391 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:16:11.568732 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:16:11.568977 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:18:06.589507 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:18:21.613964 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:18:21.614310 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:18:21.615252 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:18:21.615849 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:18:21.616117 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:19:05.023394 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:19:05.024299 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:19:05.024372 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:19:06.905277 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:19:06.905360 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:19:06.905403 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:19:36.627849 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:39.387305 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:39.387586 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:39.387969 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:39.388035 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:39.388322 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:39.388526 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:56.404463 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:56.404603 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:56.404769 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:56.404855 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:56.404901 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:22:56.405395 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:23:40.939515 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:23:40.939615 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:23:40.939673 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:23:40.940068 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:23:40.940463 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:23:40.940551 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:23:40.940622 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:29:57.225269 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:29:57.291463 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:30:17.117486 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:42:22.824451 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:43:01.154181 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:43:50.552128 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:43:50.552256 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:44:32.002653 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:44:32.003318 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:45:08.641743 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:46:47.841565 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:46:47.841691 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:46:47.841758 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:46:47.841868 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:46:47.841943 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:46:47.841987 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:49:55.605573 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:49:55.605703 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:49:55.605746 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:49:55.605786 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:49:55.605826 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:49:55.605990 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:50:47.461799 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:50:47.461888 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:50:47.462223 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:50:47.463081 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:50:47.464112 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:50:47.464180 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:50:47.464551 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:51:19.019298 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:51:19.020172 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:51:19.020876 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 19:51:19.021470 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:31.901585 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:45.076634 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:45.076863 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:45.077157 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:45.077238 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:45.077449 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:59.944893 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:59.945024 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:31:59.945166 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:32:59.359384 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:32:59.360044 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:40:51.540969 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:40:51.541101 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:40:51.541511 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:41:05.187657 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:41:05.188274 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:41:05.188844 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:41:25.335950 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:41:50.318356 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:45:03.112602 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:50:30.419886 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:50:30.419967 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 20:50:30.420039 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 22:12:48.754820 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 22:21:59.233005 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 23:29:51.254940 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-07 23:31:51.317604 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 00:47:37.632355 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 220
+2018-Jan-08 00:47:37.632355 INFO    [Blockchain] id:	04891c09b42177b86ae024d09afb9e271f1648c56dee6a20dc46caa71e1618c9
+2018-Jan-08 00:47:37.632355 INFO    [Blockchain] PoW:	99a2a3293e3e6a09d7898774a6ff635120884f2326cd01e01d5bd39243120000
+2018-Jan-08 00:47:37.632355 INFO    [Blockchain] difficulty:	166527
+2018-Jan-08 06:25:01.678130 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 414
+2018-Jan-08 06:25:01.678130 INFO    [Blockchain] id:	f3cc46a8fcfaac350bde09859fb2cc73f272ac07e646d0a2d696d7e1d8097ca9
+2018-Jan-08 06:25:01.678130 INFO    [Blockchain] PoW:	07b60dc2327bd1b08e4986ebb6c7e33aac0db11b9210494724496bab82490000
+2018-Jan-08 06:25:01.678130 INFO    [Blockchain] difficulty:	183947
+2018-Jan-08 07:36:21.834119 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 07:47:24.901522 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:01:42.846491 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:07:12.843127 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:27:00.846552 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:36:55.849183 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:46:50.849028 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:51:50.854450 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:57:50.857282 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 08:58:03.932573 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 09:03:20.853866 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 09:11:02.854963 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 10:01:33.361068 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 10:01:33.361150 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 10:01:33.361232 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:19:11.256936 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:20:24.208655 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:20:24.208876 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:20:53.517067 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.827291 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.827441 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.827495 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.827545 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.827593 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.827640 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.828281 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.828341 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:23.828871 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:41.857380 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:41.858328 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:41.858804 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:38:44.162982 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:39:11.254256 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:39:11.255658 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:39:41.637139 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:39:41.637249 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:40:11.420872 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:40:41.500943 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:41:19.222596 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:41:19.222743 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:41:49.317345 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:42:19.026435 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:42:19.026520 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:42:49.178864 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:43:19.071581 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:43:24.276986 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:43:57.159625 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:43:57.159793 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:44:24.439924 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:44:24.440054 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:44:54.107534 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:44:54.108923 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:45:23.868936 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:45:23.869199 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:45:59.192952 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:45:59.193085 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:45:59.193158 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:45:59.194219 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:46:29.428884 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:46:29.429015 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:46:29.429063 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:46:29.429109 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:46:59.408289 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:46:59.408392 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:47:04.427530 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:47:29.212063 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:47:29.212135 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:47:34.312141 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:47:34.313255 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:47:59.464407 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:47:59.465860 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:48:34.973150 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:48:34.973316 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:48:34.973407 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:48:34.974532 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:49:04.482530 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:49:04.482653 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:49:09.430608 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:49:09.430741 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:49:34.367341 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:49:40.600393 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:22.794050 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:22.794125 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:22.794207 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:22.794247 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:46.025405 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:46.025538 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:48.010314 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:50:48.010458 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:51:09.613282 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:51:09.613418 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:51:09.614744 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:51:09.614826 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:51:40.714575 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 11:51:40.750061 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:51:16.770710 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:52:06.449823 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:52:06.449954 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:52:44.969840 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:52:44.971819 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:53:01.383667 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:53:01.383788 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:53:01.383948 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:53:01.384526 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:53:21.357745 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:53:21.357894 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 12:53:21.357959 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 14:03:08.591576 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 14:18:06.547805 INFO    [Blockchain] ----- BLOCK ADDED AS ALTERNATIVE ON HEIGHT 657
+2018-Jan-08 14:18:06.547805 INFO    [Blockchain] id:	3bca28c39982adb80524bb374fc7a411c6d6c92933107f8045547218e0000636
+2018-Jan-08 14:18:06.547805 INFO    [Blockchain] PoW:	035ebe5ba8c962ad08ffde9d43af23d6df15b77360930a0d27d3dacf74080000
+2018-Jan-08 14:18:06.547805 INFO    [Blockchain] difficulty:	190910
+2018-Jan-08 14:55:44.821534 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 15:04:56.106205 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 15:04:56.107091 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 15:15:15.305270 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 15:17:25.367609 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 15:40:02.342368 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 17:59:25.654485 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 18:00:32.182555 WARNING [Blockchain] e36d2e3297448660f42f012065cd4f06b0bbc446f1c4f802c6a2d92f14364b89
+2018-Jan-08 19:27:57.257584 WARNING [HttpServer] Connection error: Unexpected symbol
+2018-Jan-08 19:27:57.257705 WARNING [HttpServer] Connection error: Unexpected symbol

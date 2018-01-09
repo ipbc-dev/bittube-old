@@ -1,0 +1,2 @@
+/usr/bin/ar qc libRpc.a  CMakeFiles/Rpc.dir/Rpc/HttpServer.cpp.o CMakeFiles/Rpc.dir/Rpc/RpcServerConfig.cpp.o CMakeFiles/Rpc.dir/Rpc/HttpClient.cpp.o CMakeFiles/Rpc.dir/Rpc/RpcServer.cpp.o CMakeFiles/Rpc.dir/Rpc/JsonRpc.cpp.o
+/usr/bin/ranlib libRpc.a

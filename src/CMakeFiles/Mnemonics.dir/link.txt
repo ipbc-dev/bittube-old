@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMnemonics.a  CMakeFiles/Mnemonics.dir/mnemonics/electrum-words.cpp.o
+/usr/bin/ranlib libMnemonics.a
