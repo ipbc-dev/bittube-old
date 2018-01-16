@@ -213,9 +213,9 @@ int main(int argc, char* argv[])
     CryptoNote::core ccore(currency, nullptr, logManager, command_line::get_arg(vm, arg_enable_blockchain_indexes));
 
     CryptoNote::Checkpoints checkpoints(logManager);
-    for (const auto& cp : CryptoNote::CHECKPOINTS) {
+    /*for (const auto& cp : CryptoNote::CHECKPOINTS) {
       checkpoints.add_checkpoint(cp.height, cp.blockId);
-    }
+    }*/
 
     if (!testnet_mode) {
       ccore.set_checkpoints(std::move(checkpoints));
