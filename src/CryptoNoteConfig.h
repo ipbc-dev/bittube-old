@@ -125,11 +125,6 @@ const char* const SEED_NODES[] = {
   "seed2.ipbc.io:24181"
 };
 
-struct CheckpointData {
-  uint32_t height;
-  const char* blockId;
-};
-
 } // CryptoNote
 
 #define ALLOW_DEBUG_COMMANDS
