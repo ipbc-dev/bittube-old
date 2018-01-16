@@ -35,7 +35,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 const uint64_t MONEY_SUPPLY                                  = UINT64_C(100000000000000000);
 const uint64_t TAIL_EMISSION_REWARD                          = UINT64_C(1000000000000);
 const size_t CRYPTONOTE_COIN_VERSION                         = 1;
-const unsigned EMISSION_SPEED_FACTOR                         = 23;
+const unsigned EMISSION_SPEED_FACTOR                         = 21;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -89,7 +89,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "ipbc";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001939298f2d822029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121010cf9df80caba8ab04f4d13dc3aed854b0be830fc7b7e3bd8ef6167854749381d";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
@@ -125,6 +125,15 @@ const char* const SEED_NODES[] = {
   "seed2.ipbc.io:24181"
 };
 
+struct CheckpointData {
+  uint32_t index;
+  const char* blockId;
+};
+
+const std::initializer_list<CheckpointData> CHECKPOINTS = { 
+
+};
+  
 } // CryptoNote
 
 #define ALLOW_DEBUG_COMMANDS
