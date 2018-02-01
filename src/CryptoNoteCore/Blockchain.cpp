@@ -975,9 +975,9 @@ bool Blockchain::validate_miner_transaction(const Block& b, uint32_t height, siz
     logger(INFO, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
     pre_mishap = true;
   }
-  else {
-    logger(INFO, BRIGHT_WHITE) << "Block height " << height << " being calculated normally.";
-  }
+  //else {
+  //  logger(INFO, BRIGHT_WHITE) << "Block height " << height << " being calculated normally.";
+  //}
 
   if (!m_currency.getBlockReward(blockMajorVersion, blocksSizeMedian, cumulativeBlockSize, alreadyGeneratedCoins, fee, reward, emissionChange, pre_mishap)) {
     logger(INFO, BRIGHT_WHITE) << "block size " << cumulativeBlockSize << " is bigger than allowed for this blockchain";
