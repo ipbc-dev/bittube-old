@@ -138,16 +138,26 @@ namespace CryptoNote {
 	}
 
 	bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins,
-		uint64_t fee, uint64_t& reward, int64_t& emissionChange) const {
+		uint64_t fee, uint64_t& reward, int64_t& emissionChange, bool pre_mishap) const {
 		// assert(alreadyGeneratedCoins <= m_moneySupply);
 		assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
 
 		// Tail emission
 
 		uint64_t baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
-		if (alreadyGeneratedCoins + CryptoNote::parameters::TAIL_EMISSION_REWARD >= m_moneySupply || baseReward < CryptoNote::parameters::TAIL_EMISSION_REWARD)
-		{
-			baseReward = CryptoNote::parameters::TAIL_EMISSION_REWARD;
+		
+		if (pre_mishap) {
+			uint64_t bad_tail_emission_reward = UINT64_C(1000000000000);
+			if (alreadyGeneratedCoins + bad_tail_emission_reward >= m_moneySupply || baseReward < bad_tail_emission_reward)
+			{
+				baseReward = bad_tail_emission_reward;
+			}
+		}
+		else {
+			if (alreadyGeneratedCoins + CryptoNote::parameters::TAIL_EMISSION_REWARD >= m_moneySupply || baseReward < CryptoNote::parameters::TAIL_EMISSION_REWARD)
+			{
+				baseReward = CryptoNote::parameters::TAIL_EMISSION_REWARD;
+			}
 		}
 
 		size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(blockMajorVersion);
