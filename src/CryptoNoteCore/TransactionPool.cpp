@@ -365,7 +365,8 @@ namespace CryptoNote {
     total_size = 0;
     fee = 0;
 
-    size_t max_total_size = (125 * median_size) / 100;
+    // size_t max_total_size = (125 * median_size) / 100;
+    size_t max_total_size = median_size * 2;
     max_total_size = std::min(max_total_size, maxCumulativeSize) - m_currency.minerTxBlobReservedSize();
 
     BlockTemplate blockTemplate;
