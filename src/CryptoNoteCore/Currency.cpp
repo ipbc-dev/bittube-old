@@ -205,9 +205,15 @@ namespace CryptoNote {
 		BaseInput in;
 		in.blockIndex = height;
 
+		bool pre_mishap = false;
+		if (height <= 1636) {
+			logger(INFO, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
+			pre_mishap = true;
+		}
+
 		uint64_t blockReward;
 		int64_t emissionChange;
-		if (!getBlockReward(blockMajorVersion, medianSize, currentBlockSize, alreadyGeneratedCoins, fee, blockReward, emissionChange)) {
+		if (!getBlockReward(blockMajorVersion, medianSize, currentBlockSize, alreadyGeneratedCoins, fee, blockReward, emissionChange, pre_mishap)) {
 			logger(INFO) << "Block is too big";
 			return false;
 		}
