@@ -88,8 +88,3 @@ set_property(TARGET Daemon PROPERTY OUTPUT_NAME "ipbcd")
 set_property(TARGET SimpleWallet PROPERTY OUTPUT_NAME "simplewallet")
 set_property(TARGET PaymentGateService PROPERTY OUTPUT_NAME "walletd")
 set_property(TARGET Miner PROPERTY OUTPUT_NAME "miner")
-
-# install(TARGETS ConnectivityTool Daemon SimpleWallet PaymentGateService Miner 
-#   RUNTIME DESTINATION bin
-#   LIBRARY DESTINATION lib
-#   ARCHIVE DESTINATION lib/static)
