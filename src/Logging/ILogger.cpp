@@ -37,11 +37,12 @@ const std::string DEFAULT = "\x1F""DEFAULT\x1F";
 
 const char ILogger::COLOR_DELIMETER = '\x1F';
 
-const std::array<std::string, 6> ILogger::LEVEL_NAMES = {
+const std::array<std::string, 7> ILogger::LEVEL_NAMES = {
   {"FATAL",
   "ERROR",
   "WARNING",
   "INFO",
+  "VERBOSE",
   "DEBUG",
   "TRACE"}
 };

@@ -30,8 +30,9 @@ enum Level {
   ERROR = 1,
   WARNING = 2,
   INFO = 3,
-  DEBUGGING = 4,
-  TRACE = 5
+  VERBOSE = 4,
+  DEBUGGING = 5,
+  TRACE = 6
 };
 
 extern const std::string BLUE;
@@ -54,7 +55,7 @@ class ILogger {
 public:
   const static char COLOR_DELIMETER;
 
-  const static std::array<std::string, 6> LEVEL_NAMES;
+  const static std::array<std::string, 7> LEVEL_NAMES;
 
   virtual void operator()(const std::string& category, Level level, boost::posix_time::ptime time, const std::string& body) = 0;
 };
