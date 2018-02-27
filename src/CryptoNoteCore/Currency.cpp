@@ -207,7 +207,7 @@ namespace CryptoNote {
 
 		bool pre_mishap = false;
 		if (height <= 1636) {
-			logger(INFO, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
+			//logger(INFO, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
 			pre_mishap = true;
 		}
 
@@ -420,111 +420,174 @@ namespace CryptoNote {
 		return Common::fromString(strAmount, amount);
 	}
 
-	difficulty_type Currency::nextDifficulty(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps,
-		std::vector<difficulty_type> cumulativeDifficulties) const {
+	difficulty_type Currency::nextDifficulty_V1(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
+		// old difficulty calculation
 
+		assert(m_difficultyWindow >= 2);
+
+		if (timestamps.size() > m_difficultyWindow) {
+			timestamps.resize(m_difficultyWindow);
+			cumulativeDifficulties.resize(m_difficultyWindow);
+		}
+
+		size_t length = timestamps.size();
+		assert(length == cumulativeDifficulties.size());
+		assert(length <= m_difficultyWindow);
+		if (length <= 1) {
+			return 1;
+		}
+
+		sort(timestamps.begin(), timestamps.end());
+
+		size_t cutBegin, cutEnd;
+		assert(2 * m_difficultyCut <= m_difficultyWindow - 2);
+		if (length <= m_difficultyWindow - 2 * m_difficultyCut) {
+			cutBegin = 0;
+			cutEnd = length;
+		}
+		else {
+			cutBegin = (length - (m_difficultyWindow - 2 * m_difficultyCut) + 1) / 2;
+			cutEnd = cutBegin + (m_difficultyWindow - 2 * m_difficultyCut);
+		}
+		assert(/*cut_begin >= 0 &&*/ cutBegin + 2 <= cutEnd && cutEnd <= length);
+		uint64_t timeSpan = timestamps[cutEnd - 1] - timestamps[cutBegin];
+		if (timeSpan == 0) {
+			timeSpan = 1;
+		}
+
+		difficulty_type totalWork = cumulativeDifficulties[cutEnd - 1] - cumulativeDifficulties[cutBegin];
+		assert(totalWork > 0);
+
+		uint64_t low, high;
+		low = mul128(totalWork, m_difficultyTarget, &high);
+		if (high != 0 || low + timeSpan - 1 < low) {
+			return 0;
+		}
+
+		return (low + timeSpan - 1) / timeSpan;
+	}
+
+	difficulty_type Currency::nextDifficulty_V2_Zawy1(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
 		// new difficulty calculation
 		// based on Zawy difficulty algorithm v1.0
 		// next Diff = Avg past N Diff * TargetInterval / Avg past N solve times
 		// as described at https://github.com/monero-project/research-lab/issues/3
 		// Window time span and total difficulty is taken instead of average as suggested by Eugene
 
-		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_2) {
+		size_t m_difficultyWindow_2 = CryptoNote::parameters::DIFFICULTY_WINDOW_V2;
+		assert(m_difficultyWindow_2 >= 2);
 
-			size_t m_difficultyWindow_2 = CryptoNote::parameters::DIFFICULTY_WINDOW_V2;
-			assert(m_difficultyWindow_2 >= 2);
-
-			if (timestamps.size() > m_difficultyWindow_2) {
-				timestamps.resize(m_difficultyWindow_2);
-				cumulativeDifficulties.resize(m_difficultyWindow_2);
-			}
-
-			size_t length = timestamps.size();
-			assert(length == cumulativeDifficulties.size());
-			assert(length <= m_difficultyWindow_2);
-			if (length <= 1) {
-				return 1;
-			}
-
-			sort(timestamps.begin(), timestamps.end());
-
-			uint64_t timeSpan = timestamps.back() - timestamps.front();
-			if (timeSpan == 0) {
-				timeSpan = 1;
-			}
-
-			difficulty_type totalWork = cumulativeDifficulties.back() - cumulativeDifficulties.front();
-			assert(totalWork > 0);
-
-			// uint64_t nextDiffZ = totalWork * m_difficultyTarget / timeSpan; 
-
- 			uint64_t low, high;
-			low = mul128(totalWork, m_difficultyTarget, &high);
-			// blockchain error "Difficulty overhead" if this function returns zero
-			if (high != 0) {
-				return 0;
-			}
-
-			uint64_t nextDiffZ = low / timeSpan;
-
-			// minimum limit
-			if (nextDiffZ <= 100000) {
-				nextDiffZ = 100000;
-			}
-
-			return nextDiffZ;
-
-			// end of new difficulty calculation
-
-		} else {
-
-			// old difficulty calculation
-
-			assert(m_difficultyWindow >= 2);
-
-			if (timestamps.size() > m_difficultyWindow) {
-				timestamps.resize(m_difficultyWindow);
-				cumulativeDifficulties.resize(m_difficultyWindow);
-			}
-
-			size_t length = timestamps.size();
-			assert(length == cumulativeDifficulties.size());
-			assert(length <= m_difficultyWindow);
-			if (length <= 1) {
-				return 1;
-			}
-
-			sort(timestamps.begin(), timestamps.end());
-
-			size_t cutBegin, cutEnd;
-			assert(2 * m_difficultyCut <= m_difficultyWindow - 2);
-			if (length <= m_difficultyWindow - 2 * m_difficultyCut) {
-				cutBegin = 0;
-				cutEnd = length;
-			}
-			else {
-				cutBegin = (length - (m_difficultyWindow - 2 * m_difficultyCut) + 1) / 2;
-				cutEnd = cutBegin + (m_difficultyWindow - 2 * m_difficultyCut);
-			}
-			assert(/*cut_begin >= 0 &&*/ cutBegin + 2 <= cutEnd && cutEnd <= length);
-			uint64_t timeSpan = timestamps[cutEnd - 1] - timestamps[cutBegin];
-			if (timeSpan == 0) {
-				timeSpan = 1;
-			}
-
-			difficulty_type totalWork = cumulativeDifficulties[cutEnd - 1] - cumulativeDifficulties[cutBegin];
-			assert(totalWork > 0);
-
-			uint64_t low, high;
-			low = mul128(totalWork, m_difficultyTarget, &high);
-			if (high != 0 || low + timeSpan - 1 < low) {
-				return 0;
-			}
-
-			return (low + timeSpan - 1) / timeSpan;
-			// end of old difficulty calculation  
+		if (timestamps.size() > m_difficultyWindow_2) {
+			timestamps.resize(m_difficultyWindow_2);
+			cumulativeDifficulties.resize(m_difficultyWindow_2);
 		}
 
+		size_t length = timestamps.size();
+		assert(length == cumulativeDifficulties.size());
+		assert(length <= m_difficultyWindow_2);
+		if (length <= 1) {
+			return 1;
+		}
+
+		sort(timestamps.begin(), timestamps.end());
+
+		uint64_t timeSpan = timestamps.back() - timestamps.front();
+		if (timeSpan == 0) {
+			timeSpan = 1;
+		}
+
+		difficulty_type totalWork = cumulativeDifficulties.back() - cumulativeDifficulties.front();
+		assert(totalWork > 0);
+
+		// uint64_t nextDiffZ = totalWork * m_difficultyTarget / timeSpan; 
+
+		uint64_t low, high;
+		low = mul128(totalWork, m_difficultyTarget, &high);
+		// blockchain error "Difficulty overhead" if this function returns zero
+		if (high != 0) {
+			return 0;
+		}
+
+		uint64_t nextDiffZ = low / timeSpan;
+
+		// minimum limit
+		if (nextDiffZ <= 100000) {
+			nextDiffZ = 100000;
+		}
+
+		return nextDiffZ;
+	}
+
+	difficulty_type Currency::nextDifficulty_V2_Zawy2(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
+		// based on Zawy difficulty algorithm WHM https://github.com/alloyproject/alloy/blob/master/src/CryptoNoteCore/Currency.cpp
+
+		int T = m_difficultyTarget;
+		size_t N = CryptoNote::parameters::DIFFICULTY_WINDOW_V2;
+		assert(N >= 2);
+
+		sort(timestamps.begin(), timestamps.end());
+		sort(cumulativeDifficulties.begin(), cumulativeDifficulties.end());
+
+		if (timestamps.size() > N) {
+			timestamps.resize(N);
+			cumulativeDifficulties.resize(N);
+		}
+		size_t length = timestamps.size();
+		assert(length == cumulativeDifficulties.size());
+		assert(length <= N);
+		if (length <= 1) {
+			return 1;
+		}
+
+		uint64_t k = 0, w = 0;
+		int t = 0, j = 0, len = length;
+
+		const double_t adjust = pow(0.9989, 500 / T);
+		k = adjust * ((length + 1) / 2) * T;
+
+		for (int i = 1; i < len; i++) {
+			int solvetime;
+			solvetime = timestamps[i] - timestamps[i - 1];
+
+			if (solvetime > 10 * T) { solvetime = 10 * T; }
+			if (solvetime < -(5 * T)) { solvetime = -(5 * T); }
+
+			j = j + 1;
+			w += solvetime * j;
+			t += solvetime;
+		}
+
+		if (w < T * length / 2) {
+			w = T * length / 2;
+		}
+
+		difficulty_type totalWork = cumulativeDifficulties.back() - cumulativeDifficulties.front();
+		assert(totalWork > 0);
+		uint64_t low, high;
+		low = mul128(totalWork, k, &high);
+		if (high != 0) {
+			return 0;
+		}
+
+		uint64_t nextDiffZ = low / w;
+
+		if (nextDiffZ <= 1) {
+			nextDiffZ = 1;
+		}
+
+		//diags
+		//printf("WHM Diff Algo, Diff:%lu  TS size:%lu  CD size:%lu\n",nextDiffZ,timestamps.size(),cumulativeDifficulties.size());
+
+		return nextDiffZ;
+	}
+
+	difficulty_type Currency::nextDifficulty(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
+		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_2) {
+			//return nextDifficulty_V2_Zawy1(blockMajorVersion, timestamps, cumulativeDifficulties);
+			return nextDifficulty_V2_Zawy2(blockMajorVersion, timestamps, cumulativeDifficulties);
+		} else {
+			return nextDifficulty_V1(blockMajorVersion, timestamps, cumulativeDifficulties);
+		}
 	}
 
 	bool Currency::checkProofOfWorkV1(Crypto::cn_context& context, const Block& block, difficulty_type currentDiffic,

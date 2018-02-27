@@ -971,7 +971,7 @@ bool Blockchain::validate_miner_transaction(const Block& b, uint32_t height, siz
 
   bool pre_mishap = false;
   if (height <= 1636) {
-    logger(INFO, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
+    logger(VERBOSE, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
     pre_mishap = true;
   }
 	
@@ -1550,7 +1550,7 @@ bool Blockchain::checkTransactionInputs(const Transaction& tx, const Crypto::Has
       }
 
       if (!check_tx_input(in_to_key, tx_prefix_hash, tx.signatures[inputIndex], pmax_used_block_height)) {
-        logger(INFO, BRIGHT_WHITE) <<
+        logger(DEBUGGING, BRIGHT_WHITE) <<
           "Failed to check ring signature for tx " << transactionHash;
         return false;
       }
@@ -1988,6 +1988,8 @@ bool Blockchain::pushBlock(const Block& blockData, const std::vector<Transaction
   m_upgradeDetectorV3.blockPushed();
   update_next_comulative_size_limit();
 
+  m_tx_pool.on_blockchain_inc(block.height, blockHash);
+
   return true;
 }
 
@@ -2290,16 +2292,21 @@ void Blockchain::removeLastBlock() {
   m_blocks.pop_back();
   m_blockIndex.pop();
 
+  if (!m_blocks.empty()) m_tx_pool.on_blockchain_dec(m_blocks.back().height, getBlockIdByHeight(m_blocks.back().height)); // ~F
+
   assert(m_blockIndex.size() == m_blocks.size());
 }
 
 bool Blockchain::checkUpgradeHeight(const UpgradeDetector& upgradeDetector) {
   uint32_t upgradeHeight = upgradeDetector.upgradeHeight();
   if (upgradeHeight != UpgradeDetectorBase::UNDEF_HEIGHT && upgradeHeight + 1 < m_blocks.size()) {
-    logger(INFO) << "Checking block version at " << upgradeHeight + 1;
     if (m_blocks[upgradeHeight + 1].bl.majorVersion != upgradeDetector.targetVersion()) {
+	  logger(VERBOSE, BRIGHT_YELLOW) << "Blockchain - Checking block version at " << upgradeHeight + 1 << " to MajorVersion " << std::to_string(upgradeDetector.targetVersion()) << " - Failure";
       return false;
     }
+	else {
+	  logger(VERBOSE, GREEN) << "Blockchain - Checking block version at " << upgradeHeight + 1 << " to MajorVersion " << std::to_string(upgradeDetector.targetVersion()) << " - Success";
+	}
   }
 
   return true;

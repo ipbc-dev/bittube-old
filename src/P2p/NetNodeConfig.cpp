@@ -112,6 +112,7 @@ bool NetNodeConfig::init(const boost::program_options::variables_map& vm)
     for(const std::string& pr_str: perrs) {
       PeerlistEntry pe = boost::value_initialized<PeerlistEntry>();
       pe.id = Crypto::rand<uint64_t>();
+	  
       if (!parsePeerFromString(pe.adr, pr_str)) {
         return false;
       }

@@ -299,10 +299,20 @@ namespace CryptoNote {
   }
   //---------------------------------------------------------------------------------
   bool tx_memory_pool::on_blockchain_inc(uint64_t new_block_height, const Crypto::Hash& top_block_id) {
+	std::lock_guard<std::recursive_mutex> lock(m_transactions_lock);
+	if (!_validated_transactions.empty()) {
+	  logger(DEBUGGING, YELLOW) << "TXMemPool - Blockheight Incremented, cleared " << _validated_transactions.size() << " cached transaction hashes. NewHeight: " << new_block_height << " TopBlock: " << top_block_id;
+	  _validated_transactions.clear();
+	}
     return true;
   }
   //---------------------------------------------------------------------------------
   bool tx_memory_pool::on_blockchain_dec(uint64_t new_block_height, const Crypto::Hash& top_block_id) {
+	std::lock_guard<std::recursive_mutex> lock(m_transactions_lock);
+	if (!_validated_transactions.empty()) {
+	  logger(DEBUGGING, YELLOW) << "TXMemPool - Blockheight Decremented " << _validated_transactions.size() << " cached transaction hashes. NewHeight: " << new_block_height << " TopBlock: " << top_block_id;
+	  _validated_transactions.clear();
+	}
     return true;
   }
   //---------------------------------------------------------------------------------
@@ -567,7 +577,13 @@ namespace CryptoNote {
     removeTransactionInputs(i->id, i->tx, i->keptByBlock);
     m_paymentIdIndex.remove(i->tx);
     m_timestampIndex.remove(i->receiveTime, i->id);
-    return m_transactions.erase(i);
+
+	/*if (_validated_transactions.find(i->id) != _validated_transactions.end()) {
+		_validated_transactions.erase(i->id);
+		logger(DEBUGGING) << "Removed transaction from TXMemPool " << i->id << " Cache Size: " << _validated_transactions.size();
+	}*/
+    
+	return m_transactions.erase(i);
   }
 
   bool tx_memory_pool::removeTransactionInputs(const Crypto::Hash& tx_id, const Transaction& tx, bool keptByBlock) {
