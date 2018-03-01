@@ -20,7 +20,7 @@ These are kept very simple. Do not consider this an exhaustive guide.
 
 Note: If cmake can't find boost, try downloading it from [here](https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.zip) and extracting it to "C:\Program Files\boost\boost_1_66_0"
 
-#### Linux/Max:
+#### Linux/Mac:
 * Clone this repository
 * Create a new directory to build in (i.e. "build")
 * Inside "build", run these commands: 'cmake ..', 'make'
