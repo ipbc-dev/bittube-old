@@ -1,7 +1,11 @@
-# IPBC - INTERPLANETARY BROADCAST COIN
+# IPBC - Interplanetary Broadcast Coin
 
 Here lies all the code for the core.
 Based on [Karbowanec](https://github.com/seredat/karbowanec), which is based on [Cryptonote](https://github.com/cryptonotefoundation/cryptonote).
+
+[IPBC Whitepaper](https://ipbc.io/whitepaper.pdf)
+## What is IPBC
+IPBC is a new streaming and data platform that returns the data sovereignty and ownership from companies and countries back to users. For more information, go to [ipbc.io](https://ipbc.io/).
 
 ## Build Instructions
 These are kept very simple. Do not consider this an exhaustive guide.
