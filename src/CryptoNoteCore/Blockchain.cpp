@@ -1699,7 +1699,8 @@ bool Blockchain::checkBlockVersion(const Block& b, const Crypto::Hash& blockHash
     return false;
   }
 
-  if (b.majorVersion == BLOCK_MAJOR_VERSION_2 && b.parentBlock.majorVersion > BLOCK_MAJOR_VERSION_1) {
+  // Change to >= for V3 ~F
+  if (b.majorVersion >= BLOCK_MAJOR_VERSION_2 && b.parentBlock.majorVersion > BLOCK_MAJOR_VERSION_1) {
     logger(ERROR, BRIGHT_RED) << "Parent block of block " << blockHash << " has wrong major version: " << static_cast<int>(b.parentBlock.majorVersion) <<
       ", at height " << height << " expected version is " << static_cast<int>(BLOCK_MAJOR_VERSION_1);
     return false;
@@ -2299,6 +2300,9 @@ void Blockchain::removeLastBlock() {
 
 bool Blockchain::checkUpgradeHeight(const UpgradeDetector& upgradeDetector) {
   uint32_t upgradeHeight = upgradeDetector.upgradeHeight();
+
+  logger(VERBOSE, BRIGHT_YELLOW) << "Blockchain - Check -- " << upgradeHeight + 1 << " " << std::to_string(upgradeDetector.targetVersion());
+
   if (upgradeHeight != UpgradeDetectorBase::UNDEF_HEIGHT && upgradeHeight + 1 < m_blocks.size()) {
     if (m_blocks[upgradeHeight + 1].bl.majorVersion != upgradeDetector.targetVersion()) {
 	  logger(VERBOSE, BRIGHT_YELLOW) << "Blockchain - Checking block version at " << upgradeHeight + 1 << " to MajorVersion " << std::to_string(upgradeDetector.targetVersion()) << " - Failure";

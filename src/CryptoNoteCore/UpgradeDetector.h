@@ -50,12 +50,15 @@ namespace CryptoNote {
 
     bool init() {
       uint32_t upgradeHeight = m_currency.upgradeHeight(m_targetVersion);
+	  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "### UPGRADE DETECTOR INIT " << upgradeHeight;
       if (upgradeHeight == UNDEF_HEIGHT) {
         if (m_blockchain.empty()) {
           m_votingCompleteHeight = UNDEF_HEIGHT;
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "Voting complete height: " << m_votingCompleteHeight;
 
         } else if (m_targetVersion - 1 == m_blockchain.back().bl.majorVersion) {
           m_votingCompleteHeight = findVotingCompleteHeight(m_blockchain.size() - 1);
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "Voting complete height: " << m_votingCompleteHeight;
 
         } else if (m_targetVersion <= m_blockchain.back().bl.majorVersion) {
           auto it = std::lower_bound(m_blockchain.begin(), m_blockchain.end(), m_targetVersion,
@@ -67,15 +70,20 @@ namespace CryptoNote {
 
           uint32_t upgradeHeight = it - m_blockchain.begin();
           m_votingCompleteHeight = findVotingCompleteHeight(upgradeHeight);
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "Voting complete height: " << m_votingCompleteHeight;
           if (m_votingCompleteHeight == UNDEF_HEIGHT) {
             logger(Logging::ERROR, Logging::BRIGHT_RED) << "Internal error: voting complete height isn't found, upgrade height = " << upgradeHeight;
             return false;
           }
         } else {
           m_votingCompleteHeight = UNDEF_HEIGHT;
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "Voting complete height: " << m_votingCompleteHeight;
         }
       } else if (!m_blockchain.empty()) {
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "Voting complete height 2 : " << m_votingCompleteHeight;
+
         if (m_blockchain.size() <= upgradeHeight + 1) {
+			logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "Voting complete height 2.1";
           if (m_blockchain.back().bl.majorVersion >= m_targetVersion) {
             logger(Logging::ERROR, Logging::BRIGHT_RED) << "Internal error: block at height " << (m_blockchain.size() - 1) <<
               " has invalid version " << static_cast<int>(m_blockchain.back().bl.majorVersion) <<
@@ -92,6 +100,7 @@ namespace CryptoNote {
           }
 
           int blockVersionAfterUpgradeHeight = m_blockchain[upgradeHeight + 1].bl.majorVersion;
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "Voting complete height 2.2 : " << blockVersionAtUpgradeHeight << " " << blockVersionAfterUpgradeHeight;
           if (blockVersionAfterUpgradeHeight != m_targetVersion) {
             logger(Logging::ERROR, Logging::BRIGHT_RED) << "Internal error: block at height " << (upgradeHeight + 1) <<
               " has invalid version " << blockVersionAfterUpgradeHeight <<
@@ -100,6 +109,8 @@ namespace CryptoNote {
           }
         }
       }
+
+	  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "### UPGRADE DETECTOR INIT END" << upgradeHeight;
 
       return true;
     }
@@ -118,15 +129,23 @@ namespace CryptoNote {
     void blockPushed() {
       assert(!m_blockchain.empty());
 
+	  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "#### Block Pushed! " << m_votingCompleteHeight << " " << m_currency.upgradeHeight(m_targetVersion);
+
       if (m_currency.upgradeHeight(m_targetVersion) != UNDEF_HEIGHT) {
-        if (m_blockchain.size() <= m_currency.upgradeHeight(m_targetVersion) + 1) {
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 1";
+        
+		if (m_blockchain.size() <= m_currency.upgradeHeight(m_targetVersion) + 1) {
           assert(m_blockchain.back().bl.majorVersion <= m_targetVersion - 1);
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 1.1 -- Last Block Major: " << std::to_string(m_blockchain.back().bl.majorVersion) << " Want: " << std::to_string(m_targetVersion) << " PreUpgrade";
         } else {
           assert(m_blockchain.back().bl.majorVersion >= m_targetVersion);
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 1.2 -- Last Block Major: " << std::to_string(m_blockchain.back().bl.majorVersion) << " Want: " << std::to_string(m_targetVersion) << " PostUpgrade";
         }
 
       } else if (m_votingCompleteHeight != UNDEF_HEIGHT) {
-        assert(m_blockchain.size() > m_votingCompleteHeight);
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 2";
+        
+		assert(m_blockchain.size() > m_votingCompleteHeight);
 
         if (m_blockchain.size() <= upgradeHeight()) {
           assert(m_blockchain.back().bl.majorVersion == m_targetVersion - 1);
@@ -142,16 +161,18 @@ namespace CryptoNote {
               upgradeTimeStr << " (in " << Common::timeIntervalToString(interval) << ")! Current last block index " << (m_blockchain.size() - 1) <<
               ", hash " << get_block_hash(m_blockchain.back().bl);
           }
-        } else if (m_blockchain.size() == upgradeHeight() + 1) {
+		} else if (m_blockchain.size() == upgradeHeight() + 1) {
           assert(m_blockchain.back().bl.majorVersion == m_targetVersion - 1);
 
           logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "###### UPGRADE has happened! Starting from block index " << (upgradeHeight() + 1) <<
             " blocks with major version below " << static_cast<int>(m_targetVersion) << " will be rejected!";
-        } else {
+		} else {
+			
           assert(m_blockchain.back().bl.majorVersion == m_targetVersion);
         }
 
       } else {
+		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 3";
         uint32_t lastBlockHeight = m_blockchain.size() - 1;
         if (isVotingComplete(lastBlockHeight)) {
           m_votingCompleteHeight = lastBlockHeight;
@@ -175,6 +196,7 @@ namespace CryptoNote {
     }
 
     size_t getNumberOfVotes(uint32_t height) {
+		logger(Logging::VERBOSE, Logging::BRIGHT_YELLOW) << "### VOTE COUNTER CALLED at " << height;
       if (height < m_currency.upgradeVotingWindow() - 1) {
         return 0;
       }
@@ -184,6 +206,8 @@ namespace CryptoNote {
         const auto& b = m_blockchain[i].bl;
         voteCounter += (b.majorVersion == m_targetVersion - 1) && (b.minorVersion == BLOCK_MINOR_VERSION_1) ? 1 : 0;
       }
+
+	  logger(Logging::VERBOSE, Logging::BRIGHT_YELLOW) << "### VOTE COUNTER COUNT: " << voteCounter;
 
       return voteCounter;
     }

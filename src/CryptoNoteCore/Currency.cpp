@@ -114,10 +114,7 @@ namespace CryptoNote {
 	}
 
 	size_t Currency::blockGrantedFullRewardZoneByBlockVersion(uint8_t blockMajorVersion) const {
-		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3) {
-			return m_blockGrantedFullRewardZone;
-		}
-		else if (blockMajorVersion == BLOCK_MAJOR_VERSION_2) {
+		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_2) {
 			return CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2;
 		}
 		else {
@@ -581,8 +578,76 @@ namespace CryptoNote {
 		return nextDiffZ;
 	}
 
+	difficulty_type Currency::nextDifficulty_V2_Zawy3(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
+		// based on Zawy difficulty algorithm WHM https://github.com/alloyproject/alloy/blob/master/src/CryptoNoteCore/Currency.cpp
+		// With fixes from Zawy
+
+
+		int T = m_difficultyTarget;
+		size_t N = CryptoNote::parameters::DIFFICULTY_WINDOW_V2;
+		assert(N >= 2);
+
+		sort(timestamps.begin(), timestamps.end());
+		sort(cumulativeDifficulties.begin(), cumulativeDifficulties.end());
+
+		if (timestamps.size() > N) {
+			timestamps.resize(N);
+			cumulativeDifficulties.resize(N);
+		}
+		size_t length = timestamps.size();
+		assert(length == cumulativeDifficulties.size());
+		assert(length <= N);
+		if (length <= 1) {
+			return 1;
+		}
+
+		uint64_t k = 0, w = 0;
+		int t = 0, j = 0, len = length;
+
+		const double_t adjust = pow(0.9989, 500 / T);
+		k = adjust * ((length + 1) / 2) * T;
+
+		for (int i = 1; i < len; i++) {
+			int solvetime;
+			solvetime = timestamps[i] - timestamps[i - 1];
+
+			if (solvetime > 6 * T) { solvetime = 6 * T; }
+			if (solvetime < -(5 * T)) { solvetime = -(5 * T); }
+
+			j = j + 1;
+			w += solvetime * j;
+			t += solvetime;
+		}
+
+		if (w < T * length / 2) {
+			w = T * length / 2;
+		}
+
+		difficulty_type totalWork = cumulativeDifficulties.back() - cumulativeDifficulties.front();
+		assert(totalWork > 0);
+		uint64_t low, high;
+		low = mul128(totalWork, k, &high);
+		if (high != 0) {
+			return 0;
+		}
+
+		uint64_t nextDiffZ = low / w;
+
+		if (nextDiffZ <= 1) {
+			nextDiffZ = 1;
+		}
+
+		//diags
+		//printf("WHM Diff Algo, Diff:%lu  TS size:%lu  CD size:%lu\n",nextDiffZ,timestamps.size(),cumulativeDifficulties.size());
+
+		return nextDiffZ;
+	}
+
 	difficulty_type Currency::nextDifficulty(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
-		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_2) {
+		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3) {
+			return nextDifficulty_V2_Zawy3(blockMajorVersion, timestamps, cumulativeDifficulties);
+		}
+		else if (blockMajorVersion == BLOCK_MAJOR_VERSION_2) {
 			//return nextDifficulty_V2_Zawy1(blockMajorVersion, timestamps, cumulativeDifficulties);
 			return nextDifficulty_V2_Zawy2(blockMajorVersion, timestamps, cumulativeDifficulties);
 		} else {

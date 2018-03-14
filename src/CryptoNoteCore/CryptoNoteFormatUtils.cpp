@@ -464,7 +464,7 @@ bool get_block_hash(const Block& b, Hash& res) {
     return false;
   }
 
-  if (BLOCK_MAJOR_VERSION_2 <= b.majorVersion) {
+  if (BLOCK_MAJOR_VERSION_3 <= b.majorVersion) { // was version_2, wtf? Is this <= reversed? ~F
     BinaryArray parent_blob;
     auto serializer = makeParentBlockSerializer(b, true, false);
     if (!toBinaryArray(serializer, parent_blob))
