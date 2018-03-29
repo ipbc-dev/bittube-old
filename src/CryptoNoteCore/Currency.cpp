@@ -73,8 +73,8 @@ namespace CryptoNote {
 		}
 
 		if (isTestnet()) {
-			m_upgradeHeightV2 = 0;
-			m_upgradeHeightV3 = static_cast<uint32_t>(-1);
+			m_upgradeHeightV2 = 2;
+			m_upgradeHeightV3 = 4; // static_cast<uint32_t>(-1)
 			m_blocksFileName = "testnet_" + m_blocksFileName;
 			m_blocksCacheFileName = "testnet_" + m_blocksCacheFileName;
 			m_blockIndexesFileName = "testnet_" + m_blockIndexesFileName;
@@ -516,7 +516,7 @@ namespace CryptoNote {
 	}
 
 	difficulty_type Currency::nextDifficulty_V2_Zawy2(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
-		// based on Zawy difficulty algorithm WHM https://github.com/alloyproject/alloy/blob/master/src/CryptoNoteCore/Currency.cpp
+		// based on Zawy difficulty algorithm WHM (adaped from https://github.com/alloyproject/alloy/blob/master/src/CryptoNoteCore/Currency.cpp)
 
 		int T = m_difficultyTarget;
 		size_t N = CryptoNote::parameters::DIFFICULTY_WINDOW_V2;
@@ -579,16 +579,16 @@ namespace CryptoNote {
 	}
 
 	difficulty_type Currency::nextDifficulty_V2_Zawy3(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
-		// based on Zawy difficulty algorithm WHM https://github.com/alloyproject/alloy/blob/master/src/CryptoNoteCore/Currency.cpp
-		// With fixes from Zawy
-
+		// based on Zawy difficulty algorithm WHM (adaped from https://github.com/alloyproject/alloy/blob/master/src/CryptoNoteCore/Currency.cpp)
+		// With many fixes from Zawy
 
 		int T = m_difficultyTarget;
 		size_t N = CryptoNote::parameters::DIFFICULTY_WINDOW_V2;
 		assert(N >= 2);
 
-		sort(timestamps.begin(), timestamps.end());
-		sort(cumulativeDifficulties.begin(), cumulativeDifficulties.end());
+		// Lists NEED to be in order!
+		//sort(timestamps.begin(), timestamps.end());
+		//sort(cumulativeDifficulties.begin(), cumulativeDifficulties.end());
 
 		if (timestamps.size() > N) {
 			timestamps.resize(N);
@@ -601,22 +601,27 @@ namespace CryptoNote {
 			return 1;
 		}
 
-		uint64_t k = 0, w = 0;
-		int t = 0, j = 0, len = length;
+		uint64_t k = 0;
+		int64_t w = 0; // Needs to be signed in case of negative timestamps
+		//int t = 0; // Not required
+
+		int j = 0;
+		//int len = length; // Not used
 
 		const double_t adjust = pow(0.9989, 500 / T);
 		k = adjust * ((length + 1) / 2) * T;
 
-		for (int i = 1; i < len; i++) {
+		for (int i = 1; i < length; i++) {
 			int solvetime;
 			solvetime = timestamps[i] - timestamps[i - 1];
 
-			if (solvetime > 6 * T) { solvetime = 6 * T; }
-			if (solvetime < -(5 * T)) { solvetime = -(5 * T); }
+			// Better numbers, 10 / -5 is a security risk according to experts
+			if (solvetime > 7 * T) { solvetime = 7 * T; }
+			if (solvetime < -(6 * T)) { solvetime = -(6 * T); }
 
 			j = j + 1;
 			w += solvetime * j;
-			t += solvetime;
+			//t += solvetime; // Don't need this
 		}
 
 		if (w < T * length / 2) {

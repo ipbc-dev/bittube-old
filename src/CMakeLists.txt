@@ -93,3 +93,7 @@ set_property(TARGET Miner PROPERTY OUTPUT_NAME "miner")
 #   RUNTIME DESTINATION bin
 #   LIBRARY DESTINATION lib
 #   ARCHIVE DESTINATION lib/static)
+
+add_executable(HashTester HashTester/hashtester.cpp)
+target_link_libraries(HashTester Common Crypto)
+set_property(TARGET HashTester PROPERTY OUTPUT_NAME "hashtester")

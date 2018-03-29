@@ -34,10 +34,10 @@
 #include "hash-ops.h"
 #include "oaes_lib.h"
 
-void (*cn_slow_hash_fp)(void *, const void *, size_t, void *);
+void (*cn_slow_hash_fp)(void *, const void *, size_t, void *, int);
 
-void cn_slow_hash_f(void * a, const void * b, size_t c, void * d){
-(*cn_slow_hash_fp)(a, b, c, d);
+void cn_slow_hash_f(void * a, const void * b, size_t c, void * d, int v){
+(*cn_slow_hash_fp)(a, b, c, d, v);
 }
 
 #if defined(__GNUC__)
@@ -53,8 +53,8 @@ void cn_slow_hash_f(void * a, const void * b, size_t c, void * d){
 #define restrict
 #endif
 
-#define MEMORY         (1 << 21) /* 2 MiB */
-#define ITER           (1 << 20)
+#define MEMORY         (1 << 21) * 2 /* 4 MiB */
+#define ITER           (1 << 20) * 2
 #define AES_BLOCK_SIZE  16
 #define AES_KEY_SIZE    32 /*16*/
 #define INIT_SIZE_BLK   8
@@ -95,7 +95,7 @@ struct cn_ctx {
   oaes_ctx* aes_ctx;
 };
 
-static_assert(sizeof(struct cn_ctx) == SLOW_HASH_CONTEXT_SIZE, "Invalid structure size");
+//static_assert(sizeof(struct cn_ctx) == SLOW_HASH_CONTEXT_SIZE, "Invalid structure size");
 
 static inline void ExpandAESKey256_sub1(__m128i *tmp1, __m128i *tmp2)
 {

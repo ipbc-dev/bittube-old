@@ -60,12 +60,13 @@ void hash_process(union hash_state *state, const uint8_t *buf, size_t count);
 enum {
   HASH_SIZE = 32,
   HASH_DATA_AREA = 136,
-  SLOW_HASH_CONTEXT_SIZE = 2097552
+  SLOW_HASH_CONTEXT_SIZE = 4194704 
 };
+// 2097552 (2mb + 400)
 
 void cn_fast_hash(const void *data, size_t length, char *hash);
 
-void cn_slow_hash_f(void *, const void *, size_t, void *);
+void cn_slow_hash_f(void *, const void *, size_t, void *, int);
 
 void hash_extra_blake(const void *data, size_t length, char *hash);
 void hash_extra_groestl(const void *data, size_t length, char *hash);

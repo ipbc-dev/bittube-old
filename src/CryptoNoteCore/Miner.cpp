@@ -408,7 +408,7 @@ namespace CryptoNote
         //we lucky!
         ++m_config.current_extra_message_index;
 
-        logger(INFO, GREEN) << "Found block for difficulty: " << local_diff;
+        logger(INFO, GREEN) << "Found block for difficulty: " << local_diff << " " << Common::podToHex(h);
 
         if(!m_handler.handle_block_found(b)) {
           --m_config.current_extra_message_index;
