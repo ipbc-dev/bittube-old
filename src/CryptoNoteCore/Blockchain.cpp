@@ -1699,10 +1699,15 @@ bool Blockchain::checkBlockVersion(const Block& b, const Crypto::Hash& blockHash
     return false;
   }
 
-  // Change to >= for V3 ~F
-  if (b.majorVersion >= BLOCK_MAJOR_VERSION_2 && b.parentBlock.majorVersion > BLOCK_MAJOR_VERSION_1) {
+  if (b.majorVersion == BLOCK_MAJOR_VERSION_2 && b.parentBlock.majorVersion > BLOCK_MAJOR_VERSION_1) {
+	  logger(ERROR, BRIGHT_RED) << "Parent block of block " << blockHash << " has wrong major version: " << static_cast<int>(b.parentBlock.majorVersion) <<
+		  ", at height " << height << " expected version is " << static_cast<int>(BLOCK_MAJOR_VERSION_1);
+	  return false;
+  }
+
+  if (b.majorVersion >= BLOCK_MAJOR_VERSION_3 && b.parentBlock.majorVersion != BLOCK_MAJOR_VERSION_3) {
     logger(ERROR, BRIGHT_RED) << "Parent block of block " << blockHash << " has wrong major version: " << static_cast<int>(b.parentBlock.majorVersion) <<
-      ", at height " << height << " expected version is " << static_cast<int>(BLOCK_MAJOR_VERSION_1);
+      ", at height " << height << " expected version is " << static_cast<int>(BLOCK_MAJOR_VERSION_3);
     return false;
   }
 
