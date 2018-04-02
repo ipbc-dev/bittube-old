@@ -208,7 +208,7 @@ cn_slow_hash_noaesni
 
 	if (variant > 2) // IPBC Variant
 	{
-		*(dst + 1) ^= a[0] ^ b[1];
+		*(dst + 1) ^= *(dst); // Only intended to make it different, not ASIC hard
 	}
 
     b_x = c_x;
