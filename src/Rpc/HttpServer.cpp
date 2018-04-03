@@ -108,7 +108,7 @@ void HttpServer::acceptLoop() {
 
     auto addr = connection.getPeerAddressAndPort();
 
-    logger(DEBUGGING) << "Incoming connection from " << addr.first.toDottedDecimal() << ":" << addr.second;
+    logger(TRACE) << "Incoming connection from " << addr.first.toDottedDecimal() << ":" << addr.second;
 
     workingContextGroup.spawn(std::bind(&HttpServer::acceptLoop, this));
 
@@ -138,7 +138,7 @@ void HttpServer::acceptLoop() {
       }
     }
 
-    logger(DEBUGGING) << "Closing connection from " << addr.first.toDottedDecimal() << ":" << addr.second << " total=" << m_connections.size();
+    logger(TRACE) << "Closing connection from " << addr.first.toDottedDecimal() << ":" << addr.second << " total=" << m_connections.size();
 
   } catch (System::InterruptedException&) {
   } catch (std::exception& e) {
