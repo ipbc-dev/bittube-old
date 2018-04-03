@@ -25,16 +25,23 @@ std::string random_string(size_t length)
 	return str;
 }
 
-Crypto::Hash hash_me(std::string data, int variant) {
+Crypto::Hash hash_me(std::string data, int variant, bool literally) {
 	Crypto::cn_context context;
 	Crypto::Hash hash;
-	std::vector<char> data_v;
-	data_v.resize(data.size() / 2);
-	size_t success = Common::fromHex(data, data_v.data(), data_v.size());
+	if (literally) {
+		Crypto::cn_slow_hash(context, data.c_str(), data.size(), hash, variant);
+	}
+	else {
+		std::vector<char> data_v;
+		data_v.resize(data.size() / 2);
+		size_t success = Common::fromHex(data, data_v.data(), data_v.size());
 
-	Crypto::cn_slow_hash(context, data_v.data(), data_v.size(), hash, variant);
+		Crypto::cn_slow_hash(context, data_v.data(), data_v.size(), hash, variant);
+	}
+	
 	return hash;
 }
+
 
 void avg_test(std::string data, int count, int variant) {
 	long double avg = 0;
@@ -42,7 +49,7 @@ void avg_test(std::string data, int count, int variant) {
 	
 	while (true) {
 		auto start = std::chrono::high_resolution_clock::now();
-		Crypto::Hash result = hash_me(data, variant);
+		Crypto::Hash result = hash_me(data, variant, false);
 		auto elapsed = std::chrono::high_resolution_clock::now() - start;
 
 		long double microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
@@ -59,8 +66,8 @@ void avg_test(std::string data, int count, int variant) {
 	}
 }
 
-void Test_Hash(std::string data, std::string expected, int variant) {
-	std::string result = Common::podToHex(hash_me(data, variant));
+void Test_Hash(std::string data, std::string expected, int variant, bool literally = false) {
+	std::string result = Common::podToHex(hash_me(data, variant, literally));
 
 	if (expected == result) {
 		print("V" << std::to_string(variant) << ": " << result << " CORRECT");
@@ -95,6 +102,7 @@ int main(int argc, char* argv[]) {
 
 	// IPBC (Custom + V7 + 4MB)
 	Test_Hash("38274c97c45a172cfc97679870422e3a1ab0784960c60514d816271415c306ee3a3ed1a77e31f6a885c3cb", "aac15d4b8025c46b37253b7c8328fce6d2e4b396ffe8403ebc4b72e74c2366a6", 3);
+	Test_Hash("This is a test PAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDING", "8fd287051a6018cdf1115aa0a6e244863397ea31895934606075dab3ca736a24", 3, true);
 
 	print("");
 	// Performance
