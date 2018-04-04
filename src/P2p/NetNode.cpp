@@ -443,6 +443,7 @@ namespace CryptoNote
       }
     } else {
       m_network_id.data[0] += 1;
+	  append_net_address(m_priority_peers, "testnet.ipbc.io:24181"); // Testnet Node
     }
 
     if (!handleConfig(config)) { 
