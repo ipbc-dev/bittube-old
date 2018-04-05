@@ -273,12 +273,12 @@ namespace CryptoNote {
       TransactionCheckInfo checkInfo(tx);
       if (_validated_transactions.find(tx.id) != _validated_transactions.end()) {
         ready_tx_ids.insert(tx.id); // ~F
-        logger(DEBUGGING) << "GetPoolDiff -- From Cache! " << tx.id;
+        logger(TRACE) << "GetPoolDiff -- From Cache! " << tx.id;
       }
       else if (is_transaction_ready_to_go(tx.tx, checkInfo)) {
         ready_tx_ids.insert(tx.id);
         _validated_transactions.insert(tx.id);
-        logger(DEBUGGING) << "GetPoolDiff -- Added to Cache! " << tx.id;
+        logger(TRACE) << "GetPoolDiff -- Added to Cache! " << tx.id;
       }
     }
 
@@ -416,12 +416,12 @@ namespace CryptoNote {
       bool ready = false;
       if (_validated_transactions.find(txd.id) != _validated_transactions.end()) {
         ready = true;
-        logger(DEBUGGING) << "FillTemplate -- From Cache! " << txd.id;
+        logger(TRACE) << "FillTemplate -- From Cache! " << txd.id;
       }
       else if (is_transaction_ready_to_go(txd.tx, checkInfo)) {
         ready = true;
         _validated_transactions.insert(txd.id);
-        logger(DEBUGGING) << "FillTemplate -- Added to Cache! " << txd.id;
+        logger(TRACE) << "FillTemplate -- Added to Cache! " << txd.id;
       }
 
       // update item state

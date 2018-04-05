@@ -971,7 +971,7 @@ bool Blockchain::validate_miner_transaction(const Block& b, uint32_t height, siz
 
   bool pre_mishap = false;
   if (height <= 1636) {
-    logger(VERBOSE, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
+    logger(TRACE, BRIGHT_WHITE) << "Block height " << height << " is affected by tail_emission_reward mishap. Adjusting.";
     pre_mishap = true;
   }
 	

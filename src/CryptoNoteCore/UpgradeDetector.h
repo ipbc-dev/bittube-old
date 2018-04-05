@@ -129,21 +129,21 @@ namespace CryptoNote {
     void blockPushed() {
       assert(!m_blockchain.empty());
 
-	  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "#### Block Pushed! " << m_votingCompleteHeight << " " << m_currency.upgradeHeight(m_targetVersion);
+	  //logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "#### Block Pushed! " << m_votingCompleteHeight << " " << m_currency.upgradeHeight(m_targetVersion);
 
       if (m_currency.upgradeHeight(m_targetVersion) != UNDEF_HEIGHT) {
-		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 1";
+		  //logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "## Branch 1";
         
 		if (m_blockchain.size() <= m_currency.upgradeHeight(m_targetVersion) + 1) {
           assert(m_blockchain.back().bl.majorVersion <= m_targetVersion - 1);
-		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 1.1 -- Last Block Major: " << std::to_string(m_blockchain.back().bl.majorVersion) << " Want: " << std::to_string(m_targetVersion) << " PreUpgrade";
+		  //logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "## Branch 1.1 -- Last Block Major: " << std::to_string(m_blockchain.back().bl.majorVersion) << " Want: " << std::to_string(m_targetVersion) << " PreUpgrade";
         } else {
           assert(m_blockchain.back().bl.majorVersion >= m_targetVersion);
-		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 1.2 -- Last Block Major: " << std::to_string(m_blockchain.back().bl.majorVersion) << " Want: " << std::to_string(m_targetVersion) << " PostUpgrade";
+		  //logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "## Branch 1.2 -- Last Block Major: " << std::to_string(m_blockchain.back().bl.majorVersion) << " Want: " << std::to_string(m_targetVersion) << " PostUpgrade";
         }
 
       } else if (m_votingCompleteHeight != UNDEF_HEIGHT) {
-		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 2";
+		  //logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "## Branch 2";
         
 		assert(m_blockchain.size() > m_votingCompleteHeight);
 
@@ -157,14 +157,14 @@ namespace CryptoNote {
             char upgradeTimeStr[40];
             strftime(upgradeTimeStr, 40, "%H:%M:%S %Y.%m.%d", upgradeTime);
 
-            logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "###### UPGRADE is going to happen after block index " << upgradeHeight() << " at about " <<
+            logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "###### UPGRADE is going to happen after block index " << upgradeHeight() << " at about " <<
               upgradeTimeStr << " (in " << Common::timeIntervalToString(interval) << ")! Current last block index " << (m_blockchain.size() - 1) <<
               ", hash " << get_block_hash(m_blockchain.back().bl);
           }
 		} else if (m_blockchain.size() == upgradeHeight() + 1) {
           assert(m_blockchain.back().bl.majorVersion == m_targetVersion - 1);
 
-          logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "###### UPGRADE has happened! Starting from block index " << (upgradeHeight() + 1) <<
+          logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "###### UPGRADE has happened! Starting from block index " << (upgradeHeight() + 1) <<
             " blocks with major version below " << static_cast<int>(m_targetVersion) << " will be rejected!";
 		} else {
 			
@@ -172,7 +172,7 @@ namespace CryptoNote {
         }
 
       } else {
-		  logger(Logging::VERBOSE, Logging::BRIGHT_GREEN) << "## Branch 3";
+		  //logger(Logging::DEBUGGING, Logging::BRIGHT_GREEN) << "## Branch 3";
         uint32_t lastBlockHeight = m_blockchain.size() - 1;
         if (isVotingComplete(lastBlockHeight)) {
           m_votingCompleteHeight = lastBlockHeight;
