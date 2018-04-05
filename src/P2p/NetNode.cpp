@@ -443,7 +443,20 @@ namespace CryptoNote
       }
     } else {
       m_network_id.data[0] += 1;
-	  append_net_address(m_priority_peers, "testnet.ipbc.io:24181"); // Testnet Node
+	  //append_net_address(m_priority_peers, "testnet.ipbc.io:24181"); // Testnet Node
+
+	  try {
+		  System::Ipv4Resolver resolver(m_dispatcher);
+		  auto addr = resolver.resolve("testnet.ipbc.io");
+
+		  PeerlistEntry pe = boost::value_initialized<PeerlistEntry>();
+		  pe.id = Crypto::rand<uint64_t>();
+		  pe.adr = NetworkAddress{ hostToNetwork(addr.getValue()), 24181 };
+		  m_command_line_peers.push_back(pe);
+	  }
+	  catch (const std::exception& e) {
+		  logger(ERROR, BRIGHT_YELLOW) << "Failed to resolve testnet.ipbc.io ': " << e.what();
+	  }
     }
 
     if (!handleConfig(config)) { 
