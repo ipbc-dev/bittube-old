@@ -77,11 +77,13 @@ namespace CryptoNote {
 		if (isTestnet()) {
 			m_upgradeHeightV2 = 20;
 			m_upgradeHeightV3 = 40; // static_cast<uint32_t>(-1)
-			m_blocksFileName = "testnet_" + m_blocksFileName;
-			m_blocksCacheFileName = "testnet_" + m_blocksCacheFileName;
-			m_blockIndexesFileName = "testnet_" + m_blockIndexesFileName;
-			m_txPoolFileName = "testnet_" + m_txPoolFileName;
-			m_blockchinIndicesFileName = "testnet_" + m_blockchinIndicesFileName;
+
+			const std::string name_modifier = std::to_string(CryptoNote::TESTNET_VERSION);
+			m_blocksFileName = "testnet_" + name_modifier + "_" + m_blocksFileName;
+			m_blocksCacheFileName = "testnet_" + name_modifier + "_" + m_blocksCacheFileName;
+			m_blockIndexesFileName = "testnet_" + name_modifier + "_" + m_blockIndexesFileName;
+			m_txPoolFileName = "testnet_" + name_modifier + "_" + m_txPoolFileName;
+			m_blockchinIndicesFileName = "testnet_" + name_modifier + "_" + m_blockchinIndicesFileName;
 		}
 
 		return true;
@@ -108,7 +110,7 @@ namespace CryptoNote {
 		m_genesisBlock.timestamp = 0;
 		m_genesisBlock.nonce = 70;
 		if (m_testnet) {
-			++m_genesisBlock.nonce;
+			m_genesisBlock.nonce += CryptoNote::TESTNET_VERSION;
 		}
 		//miner::find_nonce_for_given_block(bl, 1, 0);
 
@@ -682,7 +684,7 @@ namespace CryptoNote {
 		else if (n < N + 1) { N = n - 1; }
 
 		// To get an average solvetime to within +/- ~0.1%, use an adjustment factor.
-		// adjust=0.99 for 90 < N < 130
+		// adjust=0.999 for 90 < N < 130
 		const double adjust = 0.998;
 		// The divisor k normalizes LWMA.
 		const double k = N * (N + 1) / 2;

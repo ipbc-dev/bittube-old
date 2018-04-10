@@ -197,7 +197,7 @@ int main(int argc, char* argv[])
 
     bool testnet_mode = command_line::get_arg(vm, arg_testnet_on);
     if (testnet_mode) {
-      logger(INFO) << "Starting in testnet mode!";
+      logger(INFO) << "Starting in testnet mode! Testnet Version: " << std::to_string(CryptoNote::TESTNET_VERSION);
     }
 
     //create objects and link them

@@ -71,12 +71,12 @@ cn_slow_hash_noaesni
   memcpy(ctx->text, ctx->state.init, INIT_SIZE_BYTE);
 
   // Magic Start
-  int speed_factor = 2;
-  if (variant > 1) { // 4MB
-	  speed_factor = 1;
+  int speed_factor = 1;
+  if (variant > 1) { // 1MB
+	  speed_factor = 2;
   }
   else if (variant == -1) { // Light
-	  speed_factor = 4;
+	  speed_factor = 2;
   }
 
   unsigned int ACTUAL_MEMORY = MEMORY / speed_factor;

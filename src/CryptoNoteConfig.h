@@ -46,7 +46,7 @@ const uint64_t MINIMUM_FEE                                   = UINT64_C(100000);
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(100000);
 
 const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
-const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 7 * DIFFICULTY_TARGET; // Recommended by Zawy, Was 60 * 60 * 2
+const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 500; // Recommended by Zawy, Was 60 * 60 * 2, then 7xDIFFICULTY_TARGET, now just 500
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
 const size_t   DIFFICULTY_WINDOW_V2                          = 70;
@@ -97,7 +97,7 @@ const uint8_t  BLOCK_MINOR_VERSION_0                         =  0;
 const uint8_t  BLOCK_MINOR_VERSION_1                         =  1;
 
 const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by default, blocks ids count in synchronizing
-const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  50;     //by default, blocks count in blocks downloading
+const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  20;     //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
 const int      P2P_DEFAULT_PORT                              =  24181;
@@ -106,7 +106,7 @@ const int      RPC_DEFAULT_PORT                              =  24182;
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
 
-const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 16 * 1024 * 1024; // 16 MB
+const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 24 * 1024 * 1024; // 24 MB
 const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 8;
 const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT     = 70;
 const uint32_t P2P_DEFAULT_HANDSHAKE_INTERVAL                = 60;            // seconds
@@ -160,6 +160,8 @@ const std::initializer_list<CheckpointData> CHECKPOINTS = {
   //{19000, "1b7be4a99458c1b1d75e5adbb05dc399b234f88dd0e0ba1ba99d6f52342a26bd"},
 };
   
+const int      TESTNET_VERSION = 2;
+
 } // CryptoNote
 
 #define ALLOW_DEBUG_COMMANDS

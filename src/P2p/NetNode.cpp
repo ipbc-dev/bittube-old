@@ -442,7 +442,9 @@ namespace CryptoNote
         append_net_address(m_seed_nodes, seed);
       }
     } else {
-      m_network_id.data[0] += 1;
+		
+      //m_network_id.data[0] += 1;
+	  m_network_id.data[0] += CryptoNote::TESTNET_VERSION;
 	  //append_net_address(m_priority_peers, "testnet.ipbc.io:24181"); // Testnet Node
 
 	  try {
