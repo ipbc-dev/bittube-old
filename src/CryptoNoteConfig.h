@@ -70,8 +70,8 @@ const size_t   FUSION_TX_MIN_INPUT_COUNT                     = 12;
 const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 
 const uint32_t UPGRADE_HEIGHT_V2                             = 23000;
-const uint32_t UPGRADE_HEIGHT_V3                             = 4294967294; // UNDEF_HEIGHT (4294967295) - 1
-const unsigned UPGRADE_VOTING_THRESHOLD                      = 80;  // percent
+const uint32_t UPGRADE_HEIGHT_V3                             = 54881; // UNDEF_HEIGHT (4294967295) - 1
+const unsigned UPGRADE_VOTING_THRESHOLD                      = 80;    // percent
 const uint32_t   UPGRADE_VOTING_WINDOW                       = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
 const uint32_t   UPGRADE_WINDOW                              = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
 static_assert(0 < UPGRADE_VOTING_THRESHOLD && UPGRADE_VOTING_THRESHOLD <= 100, "Bad UPGRADE_VOTING_THRESHOLD");
@@ -156,8 +156,12 @@ const std::initializer_list<CheckpointData> CHECKPOINTS = {
   {15000, "726fc5cfc1e48740b2c77575393fdc7db299a47cc9d90d40d088c22fe3b2d129"},
   {16000, "af062ec6f9312e78f1f4824ac7059c6f58553684657c5e9cf5405dba820beaab"},
   {17000, "95cac6667df0f6e4068c9f6551198de51c7ce6c886170334a47ebb4b440633c5"},
-  //{18000, "0ce592e6d0059f7661193d1439d90210db4809ca6a371c2f19f694fab30d171b"},
-  //{19000, "1b7be4a99458c1b1d75e5adbb05dc399b234f88dd0e0ba1ba99d6f52342a26bd"},
+  {18000, "0ce592e6d0059f7661193d1439d90210db4809ca6a371c2f19f694fab30d171b"},
+  {19000, "1b7be4a99458c1b1d75e5adbb05dc399b234f88dd0e0ba1ba99d6f52342a26bd"},
+  {20000, "1c46b80d216747c496f0df31c92c8fc25f29eae3e18c89fdb5d9de4c01de745b"},
+  {30000, "e9fec8a991ecef5691223fc6474e7f23a95bf49d0327de6d946b342e2a7884b3"},
+  {40000, "ee18a481e192d69a7edaeec7c25c30208309d88b5d54e68487af105aa309fa08"},
+  {50000, "66d5478805fd31dc558c9d320d4a9946f46329a1fa439fcd520677572b55acf0"}
 };
   
 const int      TESTNET_VERSION = 2;
