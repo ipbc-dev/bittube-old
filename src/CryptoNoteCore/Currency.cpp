@@ -714,10 +714,10 @@ namespace CryptoNote {
 	}
 
 	difficulty_type Currency::nextDifficulty(uint8_t blockMajorVersion, std::vector<uint64_t> timestamps, std::vector<difficulty_type> cumulativeDifficulties) const {
-		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3) {
-			return nextDifficulty_V3_Zawy(timestamps, cumulativeDifficulties, CryptoNote::parameters::DIFFICULTY_TARGET);
-		}
-		else if (blockMajorVersion == BLOCK_MAJOR_VERSION_2) {
+		//if (blockMajorVersion >= BLOCK_MAJOR_VERSION_3) {
+		//	return nextDifficulty_V3_Zawy(timestamps, cumulativeDifficulties, CryptoNote::parameters::DIFFICULTY_TARGET);
+		//}
+		if (blockMajorVersion == BLOCK_MAJOR_VERSION_2) {
 			return nextDifficulty_V2_Zawy2(blockMajorVersion, timestamps, cumulativeDifficulties);
 		} else {
 			return nextDifficulty_V1(blockMajorVersion, timestamps, cumulativeDifficulties);
