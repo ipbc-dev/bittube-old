@@ -89,6 +89,8 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 const char     CRYPTONOTE_NAME[]                             = "bittube";
 const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff000180a094a58d1d029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121015bfdea2f96583074c2fbd4092d6cd7e5e618b8eee918f321099cf24d54c52afc"; //010a01ff000180a094a58d1d029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121015bfdea2f96583074c2fbd4092d6cd7e5e618b8eee918f321099cf24d54c52afc -- 010a01ff0001ec85afd1b101029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101d99e61eb613e913388d7a896f08d5f32ba936f8df68560609c9cc963fbcc6556
+const char     BITTUBE_SHARE_WALLET[]                        = "bxctt5onmz5CYaf9NkuhV19Vo2Rjb56FeBWx2r6jvZxyc2xCF6Md9QY49agR5S5bPGZqGrLTnxVW65dCBAcYDisb1cTdfH8XS";
+const uint8_t  BITTUBE_SHARE_PERCENT                         = 30;
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;

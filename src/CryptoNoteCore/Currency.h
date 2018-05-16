@@ -199,6 +199,8 @@ private:
   std::string m_txPoolFileName;
   std::string m_blockchinIndicesFileName;
 
+  AccountPublicAddress m_bittube_share_address;
+
   static const std::vector<uint64_t> PRETTY_AMOUNTS;
 
   bool m_testnet;

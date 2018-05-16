@@ -74,6 +74,11 @@ namespace CryptoNote {
 			return false;
 		}
 
+		if (!parseAccountAddressString(CryptoNote::BITTUBE_SHARE_WALLET, m_bittube_share_address)) {
+			logger(ERROR, BRIGHT_RED) << "Failed to parse shared wallet address";
+			return false;
+		}
+
 		if (isTestnet()) {
 			m_upgradeHeightV2 = 20;
 			m_upgradeHeightV3 = 40; // static_cast<uint32_t>(-1)
@@ -223,8 +228,16 @@ namespace CryptoNote {
 			return false;
 		}
 
+		uint64_t sharedReward = 0;
+		uint64_t minerReward = blockReward;
+		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_4) {
+			sharedReward = blockReward * BITTUBE_SHARE_PERCENT / 100;
+			minerReward = blockReward - sharedReward;
+			maxOuts -= 1; // save one out for shared transaction
+		}
+
 		std::vector<uint64_t> outAmounts;
-		decompose_amount_into_digits(blockReward, m_defaultDustThreshold,
+		decompose_amount_into_digits(minerReward, m_defaultDustThreshold,
 			[&outAmounts](uint64_t a_chunk) { outAmounts.push_back(a_chunk); },
 			[&outAmounts](uint64_t a_dust) { outAmounts.push_back(a_dust); });
 
@@ -234,27 +247,33 @@ namespace CryptoNote {
 			outAmounts.resize(outAmounts.size() - 1);
 		}
 
+		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_4) {
+			outAmounts.push_back(sharedReward);
+		}
+
 		uint64_t summaryAmounts = 0;
 		for (size_t no = 0; no < outAmounts.size(); no++) {
 			Crypto::KeyDerivation derivation = boost::value_initialized<Crypto::KeyDerivation>();
 			Crypto::PublicKey outEphemeralPubKey = boost::value_initialized<Crypto::PublicKey>();
 
-			bool r = Crypto::generate_key_derivation(minerAddress.viewPublicKey, txkey.secretKey, derivation);
+			const AccountPublicAddress &address = blockMajorVersion >= BLOCK_MAJOR_VERSION_4 && no == outAmounts.size() - 1 ? m_bittube_share_address : minerAddress;
+
+			bool r = Crypto::generate_key_derivation(address.viewPublicKey, txkey.secretKey, derivation);
 
 			if (!(r)) {
 				logger(ERROR, BRIGHT_RED)
 					<< "while creating outs: failed to generate_key_derivation("
-					<< minerAddress.viewPublicKey << ", " << txkey.secretKey << ")";
+					<< address.viewPublicKey << ", " << txkey.secretKey << ")";
 				return false;
 			}
 
-			r = Crypto::derive_public_key(derivation, no, minerAddress.spendPublicKey, outEphemeralPubKey);
+			r = Crypto::derive_public_key(derivation, no, address.spendPublicKey, outEphemeralPubKey);
 
 			if (!(r)) {
 				logger(ERROR, BRIGHT_RED)
 					<< "while creating outs: failed to derive_public_key("
 					<< derivation << ", " << no << ", "
-					<< minerAddress.spendPublicKey << ")";
+					<< address.spendPublicKey << ")";
 				return false;
 			}
 
