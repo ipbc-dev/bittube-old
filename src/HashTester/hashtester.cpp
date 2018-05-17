@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
 	// https://github.com/turtlecoin/node8-multi-hashing/blob/master/tests/cryptonight-tests.js
 	Test_Hash("0100fb8e8ac805899323371bb790db19218afd8db8e3755d8b90f39b3d5506a9abce4fa912244500000000ee8146d49fa93ee724deb57d12cbc6c6f3b924d946127c7a97418f9348828f0f02", "28a22bad3f93d1408fca472eb5ad1cbe75f21d053c8ce5b3af105a57713e21dd", -1);
 
-	// IPBC (Custom + V7 + 1MB)
+	// BitTube (Custom + V7 + 1MB)
 	Test_Hash("38274c97c45a172cfc97679870422e3a1ab0784960c60514d816271415c306ee3a3ed1a77e31f6a885c3cb", "b442a2b956e63fefe81bfa8bcbc4ddd6b63f86530eeaa46588311d290afbb2c0", 3);
 	Test_Hash("This is a test PAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDING", "a3ed4b825247952d0e91d646a3709ba6e9f6ab06390b8181611a77b63c7d2388", 3, true);
 

@@ -206,7 +206,7 @@ cn_slow_hash_noaesni
 
 	VARIANT1_2(dst + 1);
 
-	if (variant > 2) // IPBC Variant
+	if (variant > 2) // BitTube Variant
 	{
 		*(dst + 1) ^= *(dst); // Only intended to make it different, not ASIC hard
 	}
