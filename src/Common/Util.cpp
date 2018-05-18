@@ -324,6 +324,14 @@ std::string get_nix_version_display_string()
 #endif
 #endif
 
+    std::string old_config_folder = config_folder;
+    old_config_folder.replace(old_config_folder.find("bittube"), 7, "ipbc");
+
+    boost::filesystem::path old_path(old_config_folder);
+    if (boost::filesystem::is_directory(old_path)) {
+      boost::filesystem::rename(old_path, config_folder);
+    }
+
     return config_folder;
   }
 
