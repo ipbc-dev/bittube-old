@@ -231,11 +231,8 @@ namespace CryptoNote {
 		uint64_t sharedReward = 0;
 		uint64_t minerReward = blockReward;
 		if (blockMajorVersion >= BLOCK_MAJOR_VERSION_4) {
-			uint64_t noFeeReward;
-			getBlockReward(blockMajorVersion, medianSize, currentBlockSize, alreadyGeneratedCoins, 0, noFeeReward, emissionChange, pre_mishap);
-			sharedReward = (noFeeReward * BITTUBE_SHARE_PERCENT / 100);
-			minerReward = noFeeReward - sharedReward;
-			sharedReward += blockReward - noFeeReward;
+			sharedReward = blockReward * BITTUBE_SHARE_PERCENT / 100;
+			minerReward = blockReward - sharedReward;
 			maxOuts -= 1; // save one out for shared transaction
 		}
 
