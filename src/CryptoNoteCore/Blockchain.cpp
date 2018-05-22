@@ -28,6 +28,7 @@
 #include "Rpc/CoreRpcServerCommandsDefinitions.h"
 #include "Serialization/BinarySerializationTools.h"
 #include "CryptoNoteTools.h"
+#include "TransactionExtra.h"
 
 using namespace Logging;
 using namespace Common;
@@ -968,6 +969,27 @@ bool Blockchain::prevalidate_miner_transaction(const Block& b, uint32_t height) 
     return false;
   }
 
+  auto blockMajorVersion = getBlockMajorVersionForHeight(height);
+  if (blockMajorVersion >= BLOCK_MAJOR_VERSION_4) {
+    if (b.baseTransaction.outputs.size() < 2) {
+      logger(ERROR, BRIGHT_RED) << "Coinbase transaction doesn't have enough outputs for BitTube share";
+      return false;
+    }
+
+    auto &lastOut = b.baseTransaction.outputs.back();
+    if (lastOut.target.type() != typeid(KeyOutput)) {
+      logger(ERROR, BRIGHT_RED) << "BitTube share output in the Coinbase transaction has wrong type";
+      return false;
+    }
+
+    auto txPubKey = getTransactionPublicKeyFromExtra(b.baseTransaction.extra);
+    auto txKeyIndex = b.baseTransaction.outputs.size() - 1;
+    if (!is_out_to_acc(m_currency.bittubeShareKeys(), boost::get<KeyOutput>(lastOut.target), txPubKey, txKeyIndex)) {
+      logger(ERROR, BRIGHT_RED) << "BitTube share output in the Coinbase transaction has wrong address";
+      return false;
+    }
+  }
+
   return true;
 }
 
@@ -1003,6 +1025,15 @@ bool Blockchain::validate_miner_transaction(const Block& b, uint32_t height, siz
     logger(ERROR, BRIGHT_RED) << "Coinbase transaction doesn't use full amount of block reward: spent " <<
       m_currency.formatAmount(minerReward) << ", block reward is " << m_currency.formatAmount(reward);
     return false;
+  }
+
+  if (blockMajorVersion >= BLOCK_MAJOR_VERSION_4) {
+    auto &lastOut = b.baseTransaction.outputs.back();
+    uint64_t sharedReward = reward * BITTUBE_SHARE_PERCENT / 100;
+    if (lastOut.amount != sharedReward) {
+      logger(ERROR, BRIGHT_RED) << "BitTube share output in the Coinbase transaction has wrong amount: " << m_currency.formatAmount(lastOut.amount) << " expected: " << m_currency.formatAmount(sharedReward);
+      return false;
+    }
   }
 
   return true;

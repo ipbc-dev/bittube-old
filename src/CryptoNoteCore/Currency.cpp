@@ -74,8 +74,8 @@ namespace CryptoNote {
 			return false;
 		}
 
-		if (!parseAccountAddressString(CryptoNote::BITTUBE_SHARE_WALLET, m_bittube_share_address)) {
-			logger(ERROR, BRIGHT_RED) << "Failed to parse shared wallet address";
+		if (!Common::podFromHex(CryptoNote::BITTUBE_SHARE_KEYS, m_bittubeShareKeys)) {
+			logger(ERROR, BRIGHT_RED) << "Failed to parse shared BitTube account";
 			return false;
 		}
 
@@ -256,7 +256,8 @@ namespace CryptoNote {
 			Crypto::KeyDerivation derivation = boost::value_initialized<Crypto::KeyDerivation>();
 			Crypto::PublicKey outEphemeralPubKey = boost::value_initialized<Crypto::PublicKey>();
 
-			const AccountPublicAddress &address = blockMajorVersion >= BLOCK_MAJOR_VERSION_4 && no == outAmounts.size() - 1 ? m_bittube_share_address : minerAddress;
+			bool isSharedReward = blockMajorVersion >= BLOCK_MAJOR_VERSION_4 && no == outAmounts.size() - 1;
+			const AccountPublicAddress &address = isSharedReward ? m_bittubeShareKeys.address : minerAddress;
 
 			bool r = Crypto::generate_key_derivation(address.viewPublicKey, txkey.secretKey, derivation);
 

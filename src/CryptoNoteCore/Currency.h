@@ -27,6 +27,7 @@
 #include "../Logging/LoggerRef.h"
 #include "CryptoNoteBasic.h"
 #include "Difficulty.h"
+#include "CryptoTypes.h"
 
 namespace CryptoNote {
 
@@ -134,6 +135,8 @@ public:
 
   size_t getApproximateMaximumInputCount(size_t transactionSize, size_t outputCount, size_t mixinCount) const;
 
+  const AccountKeys &bittubeShareKeys() const { return m_bittubeShareKeys; }
+
 private:
   Currency(Logging::ILogger& log) : logger(log, "currency") {
   }
@@ -199,7 +202,7 @@ private:
   std::string m_txPoolFileName;
   std::string m_blockchinIndicesFileName;
 
-  AccountPublicAddress m_bittube_share_address;
+  AccountKeys m_bittubeShareKeys;
 
   static const std::vector<uint64_t> PRETTY_AMOUNTS;
 
