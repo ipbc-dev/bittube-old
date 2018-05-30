@@ -141,16 +141,24 @@ void wallet_rpc_server::processRequest(const CryptoNote::HttpRequest& request, C
 bool wallet_rpc_server::on_getbalance(const wallet_rpc::COMMAND_RPC_GET_BALANCE::request& req, wallet_rpc::COMMAND_RPC_GET_BALANCE::response& res) {
   res.locked_amount = m_wallet.pendingBalance();
   res.available_balance = m_wallet.actualBalance();
+  res.balance = res.locked_amount + res.available_balance;
+  res.unlocked_balance = res.available_balance;
   return true;
 }
+
 //------------------------------------------------------------------------------------------------------------------------------
 bool wallet_rpc_server::on_transfer(const wallet_rpc::COMMAND_RPC_TRANSFER::request& req, wallet_rpc::COMMAND_RPC_TRANSFER::response& res) {
   std::vector<CryptoNote::WalletLegacyTransfer> transfers;
+  std::vector<CryptoNote::TransactionMessage> messages;
   for (auto it = req.destinations.begin(); it != req.destinations.end(); it++) {
     CryptoNote::WalletLegacyTransfer transfer;
     transfer.address = it->address;
     transfer.amount = it->amount;
     transfers.push_back(transfer);
+
+    if (!it->message.empty()) {
+      messages.emplace_back(CryptoNote::TransactionMessage{ it->message, it->address });
+    }
   }
 
   std::vector<uint8_t> extra;
@@ -171,13 +179,22 @@ bool wallet_rpc_server::on_transfer(const wallet_rpc::COMMAND_RPC_TRANSFER::requ
     }
   }
 
+  for (auto& rpc_message : req.messages) {
+     messages.emplace_back(CryptoNote::TransactionMessage{ rpc_message.message, rpc_message.address });
+  }
+
+  uint64_t ttl = 0;
+  if (req.ttl != 0) {
+    ttl = static_cast<uint64_t>(time(nullptr)) + req.ttl;
+  }
+
   std::string extraString;
   std::copy(extra.begin(), extra.end(), std::back_inserter(extraString));
   try {
     CryptoNote::WalletHelper::SendCompleteResultObserver sent;
     WalletHelper::IWalletRemoveObserverGuard removeGuard(m_wallet, sent);
 
-    CryptoNote::TransactionId tx = m_wallet.sendTransaction(transfers, req.fee, extraString, req.mixin, req.unlock_time);
+    CryptoNote::TransactionId tx = m_wallet.sendTransaction(transfers, req.fee, extraString, req.mixin, req.unlock_time, messages, ttl);
     if (tx == WALLET_LEGACY_INVALID_TRANSACTION_ID) {
       throw std::runtime_error("Couldn't send transaction");
     }
@@ -198,6 +215,7 @@ bool wallet_rpc_server::on_transfer(const wallet_rpc::COMMAND_RPC_TRANSFER::requ
   }
   return true;
 }
+
 //------------------------------------------------------------------------------------------------------------------------------
 bool wallet_rpc_server::on_store(const wallet_rpc::COMMAND_RPC_STORE::request& req, wallet_rpc::COMMAND_RPC_STORE::response& res) {
   try {
