@@ -141,6 +141,8 @@ void wallet_rpc_server::processRequest(const CryptoNote::HttpRequest& request, C
 bool wallet_rpc_server::on_getbalance(const wallet_rpc::COMMAND_RPC_GET_BALANCE::request& req, wallet_rpc::COMMAND_RPC_GET_BALANCE::response& res) {
   res.locked_amount = m_wallet.pendingBalance();
   res.available_balance = m_wallet.actualBalance();
+  res.balance = res.locked_amount + res.available_balance;
+  res.unlocked_balance = res.available_balance;
   return true;
 }
 //------------------------------------------------------------------------------------------------------------------------------
