@@ -838,7 +838,7 @@ bool RpcServer::k_on_transactions_by_payment_id(const K_COMMAND_RPC_GET_TRANSACT
 	return true;
 }
 
-bool RpcServer::on_getblockcount(const COMMAND_RPC_GETBLOCKCOUNT::request& req, COMMAND_RPC_GETBLOCKCOUNT::response& res) {
+bool RpcServer::on_getblockcount(const COMMAND_RPC_GETBLOCKCOUNT::request& /*req*/, COMMAND_RPC_GETBLOCKCOUNT::response& res) {
   res.count = m_core.get_current_blockchain_height();
   res.status = CORE_RPC_STATUS_OK;
   return true;
