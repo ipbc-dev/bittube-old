@@ -103,13 +103,13 @@ protected:
   void clearCaches(bool clearTransactions, bool clearCachedData);
   void convertAndLoadWalletFile(const std::string& path, std::ifstream&& walletFileStream);
   static void decryptKeyPair(const EncryptedWalletRecord& cipher, Crypto::PublicKey& publicKey, Crypto::SecretKey& secretKey,
-    uint64_t& creationTimestamp, const Crypto::chacha8_key& key);
+    uint64_t& creationTimestamp, const Crypto::chacha_key& key);
   void decryptKeyPair(const EncryptedWalletRecord& cipher, Crypto::PublicKey& publicKey, Crypto::SecretKey& secretKey, uint64_t& creationTimestamp) const;
   static EncryptedWalletRecord encryptKeyPair(const Crypto::PublicKey& publicKey, const Crypto::SecretKey& secretKey, uint64_t creationTimestamp,
-    const Crypto::chacha8_key& key, const Crypto::chacha8_iv& iv);
+    const Crypto::chacha_key& key, const Crypto::chacha_iv& iv);
   EncryptedWalletRecord encryptKeyPair(const Crypto::PublicKey& publicKey, const Crypto::SecretKey& secretKey, uint64_t creationTimestamp) const;
-  Crypto::chacha8_iv getNextIv() const;
-  static void incIv(Crypto::chacha8_iv& iv);
+  Crypto::chacha_iv getNextIv() const;
+  static void incIv(Crypto::chacha_iv& iv);
   void incNextIv();
   void initWithKeys(const std::string& path, const std::string& password, const Crypto::PublicKey& viewPublicKey, const Crypto::SecretKey& viewSecretKey);
   std::string doCreateAddress(const Crypto::PublicKey& spendPublicKey, const Crypto::SecretKey& spendSecretKey, uint64_t creationTimestamp);
@@ -150,7 +150,7 @@ protected:
 #pragma pack(push, 1)
   struct ContainerStoragePrefix {
     uint8_t version;
-    Crypto::chacha8_iv nextIv;
+    Crypto::chacha_iv nextIv;
     EncryptedWalletRecord encryptedViewKeys;
   };
 #pragma pack(pop)
@@ -281,16 +281,16 @@ protected:
   void addUnconfirmedTransaction(const ITransactionReader& transaction);
   void removeUnconfirmedTransaction(const Crypto::Hash& transactionHash);
 
-  static void copyContainerStorageKeys(ContainerStorage& src, const Crypto::chacha8_key& srcKey, ContainerStorage& dst, const Crypto::chacha8_key& dstKey);
-  static void copyContainerStoragePrefix(ContainerStorage& src, const Crypto::chacha8_key& srcKey, ContainerStorage& dst, const Crypto::chacha8_key& dstKey);
+  static void copyContainerStorageKeys(ContainerStorage& src, const Crypto::chacha_key& srcKey, ContainerStorage& dst, const Crypto::chacha_key& dstKey);
+  static void copyContainerStoragePrefix(ContainerStorage& src, const Crypto::chacha_key& srcKey, ContainerStorage& dst, const Crypto::chacha_key& dstKey);
   void deleteOrphanTransactions(const std::unordered_set<Crypto::PublicKey>& deletedKeys);
-  static void encryptAndSaveContainerData(ContainerStorage& storage, const Crypto::chacha8_key& key, const void* containerData, size_t containerDataSize);
-  static void loadAndDecryptContainerData(ContainerStorage& storage, const Crypto::chacha8_key& key, BinaryArray& containerData);
+  static void encryptAndSaveContainerData(ContainerStorage& storage, const Crypto::chacha_key& key, const void* containerData, size_t containerDataSize);
+  static void loadAndDecryptContainerData(ContainerStorage& storage, const Crypto::chacha_key& key, BinaryArray& containerData);
   void initTransactionPool();
   void loadSpendKeys();
   void loadContainerStorage(const std::string& path);
   void loadWalletCache(std::unordered_set<Crypto::PublicKey>& addedKeys, std::unordered_set<Crypto::PublicKey>& deletedKeys, std::string& extra);
-  void saveWalletCache(ContainerStorage& storage, const Crypto::chacha8_key& key, WalletSaveLevel saveLevel, const std::string& extra);
+  void saveWalletCache(ContainerStorage& storage, const Crypto::chacha_key& key, WalletSaveLevel saveLevel, const std::string& extra);
   void subscribeWallets();
 
   std::vector<OutputToTransfer> pickRandomFusionInputs(const std::vector<std::string>& addresses,
@@ -349,7 +349,7 @@ protected:
   WalletState m_state;
 
   std::string m_password;
-  Crypto::chacha8_key m_key;
+  Crypto::chacha_key m_key;
   std::string m_path;
   std::string m_extra; // workaround for wallet reset
 

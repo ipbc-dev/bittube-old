@@ -244,7 +244,7 @@ void WalletGreen::clearCaches(bool clearTransactions, bool clearCachedData) {
 }
 
 void WalletGreen::decryptKeyPair(const EncryptedWalletRecord& cipher, PublicKey& publicKey, SecretKey& secretKey,
-  uint64_t& creationTimestamp, const Crypto::chacha8_key& key) {
+  uint64_t& creationTimestamp, const Crypto::chacha_key& key) {
 
   std::array<char, sizeof(cipher.data)> buffer;
   chacha8(cipher.data, sizeof(cipher.data), key, cipher.iv, buffer.data());
@@ -262,7 +262,7 @@ void WalletGreen::decryptKeyPair(const EncryptedWalletRecord& cipher, PublicKey&
 }
 
 EncryptedWalletRecord WalletGreen::encryptKeyPair(const PublicKey& publicKey, const SecretKey& secretKey, uint64_t creationTimestamp,
-  const Crypto::chacha8_key& key, const Crypto::chacha8_iv& iv) {
+  const Crypto::chacha_key& key, const Crypto::chacha_iv& iv) {
 
   EncryptedWalletRecord result;
 
@@ -286,13 +286,13 @@ EncryptedWalletRecord WalletGreen::encryptKeyPair(const PublicKey& publicKey, co
   return encryptKeyPair(publicKey, secretKey, creationTimestamp, m_key, getNextIv());
 }
 
-Crypto::chacha8_iv WalletGreen::getNextIv() const {
+Crypto::chacha_iv WalletGreen::getNextIv() const {
   const auto* prefix = reinterpret_cast<const ContainerStoragePrefix*>(m_containerStorage.prefix());
   return prefix->nextIv;
 }
 
-void WalletGreen::incIv(Crypto::chacha8_iv& iv) {
-  static_assert(sizeof(uint64_t) == sizeof(Crypto::chacha8_iv), "Bad Crypto::chacha8_iv size");
+void WalletGreen::incIv(Crypto::chacha_iv& iv) {
+  static_assert(sizeof(uint64_t) == sizeof(Crypto::chacha_iv), "Bad Crypto::chacha_iv size");
   uint64_t* i = reinterpret_cast<uint64_t*>(&iv);
   if (*i < std::numeric_limits<uint64_t>::max()) {
     ++(*i);
@@ -302,7 +302,7 @@ void WalletGreen::incIv(Crypto::chacha8_iv& iv) {
 }
 
 void WalletGreen::incNextIv() {
-  static_assert(sizeof(uint64_t) == sizeof(Crypto::chacha8_iv), "Bad Crypto::chacha8_iv size");
+  static_assert(sizeof(uint64_t) == sizeof(Crypto::chacha_iv), "Bad Crypto::chacha_iv size");
   auto* prefix = reinterpret_cast<ContainerStoragePrefix*>(m_containerStorage.prefix());
   incIv(prefix->nextIv);
 }
@@ -320,7 +320,7 @@ void WalletGreen::initWithKeys(const std::string& path, const std::string& passw
   ContainerStorage newStorage(path, Common::FileMappedVectorOpenMode::CREATE, sizeof(ContainerStoragePrefix));
   ContainerStoragePrefix* prefix = reinterpret_cast<ContainerStoragePrefix*>(newStorage.prefix());
   prefix->version = static_cast<uint8_t>(WalletSerializerV2::SERIALIZATION_VERSION);
-  prefix->nextIv = Crypto::rand<Crypto::chacha8_iv>();
+  prefix->nextIv = Crypto::rand<Crypto::chacha_iv>();
 
   Crypto::cn_context cnContext;
   Crypto::generate_chacha8_key(cnContext, password, m_key);
@@ -387,7 +387,7 @@ void WalletGreen::exportWallet(const std::string& path, bool encrypt, WalletSave
     ContainerStorage newStorage(path, FileMappedVectorOpenMode::CREATE, m_containerStorage.prefixSize());
     storageCreated = true;
 
-    chacha8_key newStorageKey;
+    chacha_key newStorageKey;
     if (encrypt) {
       newStorageKey = m_key;
     } else {
@@ -561,7 +561,7 @@ void WalletGreen::loadWalletCache(std::unordered_set<Crypto::PublicKey>& addedKe
   m_logger(DEBUGGING) << "Container cache loaded";
 }
 
-void WalletGreen::saveWalletCache(ContainerStorage& storage, const Crypto::chacha8_key& key, WalletSaveLevel saveLevel, const std::string& extra) {
+void WalletGreen::saveWalletCache(ContainerStorage& storage, const Crypto::chacha_key& key, WalletSaveLevel saveLevel, const std::string& extra) {
   WalletTransactions transactions;
   WalletTransfers transfers;
 
@@ -611,7 +611,7 @@ void WalletGreen::saveWalletCache(ContainerStorage& storage, const Crypto::chach
   m_logger(DEBUGGING) << "Container saving finished";
 }
 
-void WalletGreen::copyContainerStorageKeys(ContainerStorage& src, const chacha8_key& srcKey, ContainerStorage& dst, const chacha8_key& dstKey) {
+void WalletGreen::copyContainerStorageKeys(ContainerStorage& src, const chacha_key& srcKey, ContainerStorage& dst, const chacha_key& dstKey) {
   dst.reserve(src.size());
 
   for (auto& encryptedSpendKeys : src) {
@@ -622,18 +622,18 @@ void WalletGreen::copyContainerStorageKeys(ContainerStorage& src, const chacha8_
 
     // push_back() can resize container, and dstPrefix address can be changed, so it is requested for each key pair
     ContainerStoragePrefix* dstPrefix = reinterpret_cast<ContainerStoragePrefix*>(dst.prefix());
-    Crypto::chacha8_iv keyPairIv = dstPrefix->nextIv;
+    Crypto::chacha_iv keyPairIv = dstPrefix->nextIv;
     incIv(dstPrefix->nextIv);
 
     dst.push_back(encryptKeyPair(publicKey, secretKey, creationTimestamp, dstKey, keyPairIv));
   }
 }
 
-void WalletGreen::copyContainerStoragePrefix(ContainerStorage& src, const chacha8_key& srcKey, ContainerStorage& dst, const chacha8_key& dstKey) {
+void WalletGreen::copyContainerStoragePrefix(ContainerStorage& src, const chacha_key& srcKey, ContainerStorage& dst, const chacha_key& dstKey) {
   ContainerStoragePrefix* srcPrefix = reinterpret_cast<ContainerStoragePrefix*>(src.prefix());
   ContainerStoragePrefix* dstPrefix = reinterpret_cast<ContainerStoragePrefix*>(dst.prefix());
   dstPrefix->version = srcPrefix->version;
-  dstPrefix->nextIv = Crypto::rand<chacha8_iv>();
+  dstPrefix->nextIv = Crypto::rand<chacha_iv>();
 
   Crypto::PublicKey publicKey;
   Crypto::SecretKey secretKey;
@@ -643,10 +643,10 @@ void WalletGreen::copyContainerStoragePrefix(ContainerStorage& src, const chacha
   incIv(dstPrefix->nextIv);
 }
 
-void WalletGreen::encryptAndSaveContainerData(ContainerStorage& storage, const Crypto::chacha8_key& key, const void* containerData, size_t containerDataSize) {
+void WalletGreen::encryptAndSaveContainerData(ContainerStorage& storage, const Crypto::chacha_key& key, const void* containerData, size_t containerDataSize) {
   ContainerStoragePrefix* prefix = reinterpret_cast<ContainerStoragePrefix*>(storage.prefix());
 
-  Crypto::chacha8_iv suffixIv = prefix->nextIv;
+  Crypto::chacha_iv suffixIv = prefix->nextIv;
   incIv(prefix->nextIv);
 
   BinaryArray encryptedContainer;
@@ -663,10 +663,10 @@ void WalletGreen::encryptAndSaveContainerData(ContainerStorage& storage, const C
   std::copy(suffix.begin(), suffix.end(), storage.suffix());
 }
 
-void WalletGreen::loadAndDecryptContainerData(ContainerStorage& storage, const Crypto::chacha8_key& key, BinaryArray& containerData) {
+void WalletGreen::loadAndDecryptContainerData(ContainerStorage& storage, const Crypto::chacha_key& key, BinaryArray& containerData) {
   Common::MemoryInputStream suffixStream(storage.suffix(), storage.suffixSize());
   BinaryInputStreamSerializer suffixSerializer(suffixStream);
-  Crypto::chacha8_iv suffixIv;
+  Crypto::chacha_iv suffixIv;
   BinaryArray encryptedContainer;
   suffixSerializer(suffixIv, "suffixIv");
   suffixSerializer(encryptedContainer, "encryptedContainer");
@@ -797,7 +797,7 @@ void WalletGreen::convertAndLoadWalletFile(const std::string& path, std::ifstrea
   m_containerStorage.open(tmpPath.string(), Common::FileMappedVectorOpenMode::CREATE, sizeof(ContainerStoragePrefix));
   ContainerStoragePrefix* prefix = reinterpret_cast<ContainerStoragePrefix*>(m_containerStorage.prefix());
   prefix->version = WalletSerializerV2::SERIALIZATION_VERSION;
-  prefix->nextIv = Crypto::rand<Crypto::chacha8_iv>();
+  prefix->nextIv = Crypto::rand<Crypto::chacha_iv>();
 
   uint64_t creationTimestamp = time(nullptr);
   prefix->encryptedViewKeys = encryptKeyPair(m_viewPublicKey, m_viewSecretKey, creationTimestamp);
@@ -838,7 +838,7 @@ void WalletGreen::changePassword(const std::string& oldPassword, const std::stri
   }
 
   Crypto::cn_context cnContext;
-  Crypto::chacha8_key newKey;
+  Crypto::chacha_key newKey;
   Crypto::generate_chacha8_key(cnContext, newPassword, newKey);
 
   m_containerStorage.atomicUpdate([this, newKey](ContainerStorage& newStorage) {

@@ -252,7 +252,7 @@ WalletSerializerV1::WalletSerializerV1(
   m_transactionSoftLockTime(transactionSoftLockTime)
 { }
 
-void WalletSerializerV1::load(const Crypto::chacha8_key& key, Common::IInputStream& source) {
+void WalletSerializerV1::load(const Crypto::chacha_key& key, Common::IInputStream& source) {
   CryptoNote::BinaryInputStreamSerializer s(source);
   s.beginObject("wallet");
 
@@ -269,7 +269,7 @@ void WalletSerializerV1::load(const Crypto::chacha8_key& key, Common::IInputStre
   s.endObject();
 }
 
-void WalletSerializerV1::loadWallet(Common::IInputStream& source, const Crypto::chacha8_key& key, uint32_t version) {
+void WalletSerializerV1::loadWallet(Common::IInputStream& source, const Crypto::chacha_key& key, uint32_t version) {
   CryptoContext cryptoContext;
 
   bool details = false;
@@ -321,7 +321,7 @@ void WalletSerializerV1::loadWallet(Common::IInputStream& source, const Crypto::
   }
 }
 
-void WalletSerializerV1::loadWalletV1(Common::IInputStream& source, const Crypto::chacha8_key& key) {
+void WalletSerializerV1::loadWalletV1(Common::IInputStream& source, const Crypto::chacha_key& key) {
   CryptoContext cryptoContext;
 
   CryptoNote::BinaryInputStreamSerializer encrypted(source);
@@ -391,7 +391,7 @@ uint32_t WalletSerializerV1::loadVersion(Common::IInputStream& source) {
   return version;
 }
 
-void WalletSerializerV1::loadIv(Common::IInputStream& source, Crypto::chacha8_iv& iv) {
+void WalletSerializerV1::loadIv(Common::IInputStream& source, Crypto::chacha_iv& iv) {
   CryptoNote::BinaryInputStreamSerializer s(source);
 
   s.binary(static_cast<void *>(&iv.data), sizeof(iv.data), "chacha_iv");

@@ -31,7 +31,7 @@
 #include <boost/multi_index/member.hpp>
 
 #include "Common/FileMappedVector.h"
-#include "crypto/chacha8.h"
+#include "crypto/chacha.h"
 
 namespace CryptoNote {
 
@@ -48,7 +48,7 @@ struct WalletRecord {
 
 #pragma pack(push, 1)
 struct EncryptedWalletRecord {
-  Crypto::chacha8_iv iv;
+  Crypto::chacha_iv iv;
   // Secret key, public key and creation timestamp
   uint8_t data[sizeof(Crypto::PublicKey) + sizeof(Crypto::SecretKey) + sizeof(uint64_t)];
 };

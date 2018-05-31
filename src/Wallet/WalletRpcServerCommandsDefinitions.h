@@ -56,10 +56,22 @@ using CryptoNote::ISerializer;
   {
     uint64_t amount;
     std::string address;
+    std::string message;
 
     void serialize(ISerializer& s) {
       KV_MEMBER(amount)
       KV_MEMBER(address)
+      KV_MEMBER(message)
+    }
+  };
+
+  struct TransferMessage {
+    std::string address;
+    std::string message;
+
+    void serialize(ISerializer& s) {
+      KV_MEMBER(address)
+      KV_MEMBER(message)
     }
   };
 
@@ -72,6 +84,8 @@ using CryptoNote::ISerializer;
       uint64_t mixin;
       uint64_t unlock_time;
       std::string payment_id;
+      std::list<TransferMessage> messages;
+      uint64_t ttl = 0;
 
       void serialize(ISerializer& s) {
         KV_MEMBER(destinations)
@@ -79,6 +93,8 @@ using CryptoNote::ISerializer;
         KV_MEMBER(mixin)
         KV_MEMBER(unlock_time)
         KV_MEMBER(payment_id)
+        KV_MEMBER(messages);
+        KV_MEMBER(ttl);
       }
     };
 

@@ -44,6 +44,9 @@ struct SendTransactionContext
   std::list<TransactionOutputInformation> selectedTransfers;
   TxDustPolicy dustPolicy;
   uint64_t mixIn;
+  std::vector<tx_message_entry> messages;
+  uint64_t ttl;
+  uint32_t depositTerm;
 };
 
 } //namespace CryptoNote
