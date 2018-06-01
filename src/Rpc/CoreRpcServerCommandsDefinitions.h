@@ -339,7 +339,8 @@ struct COMMAND_RPC_GET_FEE_ADDRESS {
 };
 
 struct COMMAND_RPC_GETBLOCKCOUNT {
-  typedef std::vector<std::string> request;
+  // typedef std::vector<std::string> request;
+  typedef EMPTY_STRUCT request;
 
   struct response {
     uint64_t count;
